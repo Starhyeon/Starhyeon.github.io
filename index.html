@@ -40,7 +40,7 @@
     /* small zoom for dynamic feel */
     .slides img.visible{transform:scale(1.06)}
 
-    /* gradient overlay to improve contrast for header text */
+    /* gradient overlay */
     .hero::after{content:''; position:absolute; left:0; right:0; bottom:0; height:35%; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(7,17,26,0.85) 100%); pointer-events:none}
 
     /* ---------- Main content ---------- */
@@ -97,15 +97,14 @@
     </div>
   </header>
 
-  <!-- Intro overlay (black). Disappears on first interaction (click/tap). User chose option A -->
+  <!-- Intro overlay -->
   <div id="intro" role="banner">SUSHI HOUSE</div>
 
-  <!-- Hero slideshow. Images use your uploaded local files. -->
+  <!-- Hero slideshow -->
   <section class="hero" aria-label="Featured dishes">
     <div class="slides" id="slides" onclick="hideIntro()">
       <img src="images/sushi1.jpg" alt="Sushi selection" class="visible"/>
       <img src="images/sushi2.jpg" alt="Restaurant table spread"/>
-      <!-- Add more images here when you upload them: e.g. /mnt/data/sushi3.jpg -->
     </div>
   </section>
 
@@ -134,7 +133,7 @@
     <section id="food">
       <div class="container">
         <h2>Food — Sushi Selections</h2>
-        <p class="lead">A preview list. Link to a full page/menu later for the fancy interactive menu.</p>
+        <p class="lead">A preview list.</p>
         <div class="menu-list" style="margin-top:18px">
           <div class="menu-item">
             <h4>Chef's Omakase</h4>
@@ -170,15 +169,15 @@
     <section id="events">
       <div class="container">
         <h2>Events</h2>
-        <p class="lead">We host one signature event: an intimate seasonal tasting evening.</p>
+        <p class="lead">We host one signature event.</p>
         <div class="event" style="margin-top:12px">
           <div style="flex:1">
             <h3 style="margin:0">Seasonal Sushi Tasting</h3>
-            <p class="muted">A carefully curated multi-course tasting showcasing the best seasonal fish and produce. Limited seats.</p>
+            <p class="muted">A curated multi-course tasting.</p>
             <ul class="muted" style="margin:8px 0 0 18px">
-              <li>Date: Seasonal (check back)</li>
-              <li>Seats: Limited 12</li>
-              <li>Price: £85 per person (sample)</li>
+              <li>Date: Seasonal</li>
+              <li>Seats: 12</li>
+              <li>Price: £85</li>
             </ul>
           </div>
         </div>
@@ -189,7 +188,7 @@
       <div class="container">
         <h2>Mission</h2>
         <div class="mission">
-          <p>To present sushi that respects tradition while embracing local, seasonal ingredients — prepared with precision, served with warmth.</p>
+          <p>To present sushi that respects tradition while embracing local, seasonal ingredients.</p>
         </div>
       </div>
     </section>
@@ -202,17 +201,15 @@
   </footer>
 
   <script>
-    /* ---------- Slideshow logic ---------- */
     (function(){
       const slides = document.querySelectorAll('#slides img');
       let idx = 0;
       const show = (i)=>{
         slides.forEach((s,si)=> s.classList.toggle('visible', si===i));
       }
-      // rotate every 8s
       setInterval(()=>{ idx = (idx+1) % slides.length; show(idx); }, 8000);
 
-      // allow initial click anywhere to dismiss intro (option A)
+      // dismiss intro
       window.hideIntro = function(){
         const intro = document.getElementById('intro');
         if(!intro) return;
@@ -221,7 +218,11 @@
         setTimeout(()=> intro.remove(), 1200);
       }
 
-      // also dismiss on any keypress or touchstart for accessibility
+      // AUTO-HIDE AFTER 2 SECONDS
+      setTimeout(() => {
+        if (document.getElementById('intro')) hideIntro();
+      }, 2000);
+
       const dismiss = ()=>{ if(document.getElementById('intro')) hideIntro(); }
       window.addEventListener('keydown', dismiss, {once:true});
       window.addEventListener('touchstart', dismiss, {once:true});
