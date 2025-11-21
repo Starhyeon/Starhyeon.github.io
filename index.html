@@ -1,84 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sushi Restaurant</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sushi House — Home</title>
+  <meta name="description" content="Sushi House — modern sushi restaurant" />
   <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#fff; }
-    header { position:fixed; top:0; width:100%; background:rgba(0,0,0,0.7); color:#fff; padding:15px 40px; display:flex; justify-content:space-between; align-items:center; z-index:10; }
-    header nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; }
-    .hero { height:100vh; width:100%; overflow:hidden; position:relative; }
-    .hero img { width:100%; height:100%; object-fit:cover; position:absolute; animation:slide 18s infinite; opacity:0; }
-    .hero img:nth-child(1) { animation-delay:0s; }
-    .hero img:nth-child(2) { animation-delay:6s; }
-    .hero img:nth-child(3) { animation-delay:12s; }
-    @keyframes slide {
-      0% { opacity:0; }
-      5% { opacity:1; }
-      30% { opacity:1; }
-      35% { opacity:0; }
-      100% { opacity:0; }
+    /* ---------- Reset & base ---------- */
+    :root{
+      --bg:#07111a; --card:#0f1c23; --accent:#d6b46a; --muted:#98a1a6; --glass: rgba(255,255,255,0.04);
+      --max-width:1200px;
     }
-    section { padding:80px 40px; max-width:1200px; margin:auto; }
-    h2 { font-size:32px; margin-bottom:20px; }
-    footer { background:#111; color:#ccc; padding:40px; text-align:center; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:var(--bg); color:#e6eef3; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* ---------- Header ---------- */
+    header{position:fixed; inset:0 0 auto 0; height:72px; display:flex; align-items:center; justify-content:space-between; padding:12px 32px; z-index:40;}
+    .header-inner{width:100%; max-width:var(--max-width); margin:0 auto; display:flex; align-items:center; justify-content:space-between}
+    .logo{font-weight:700; letter-spacing:2px; font-size:18px; color:var(--accent)}
+    nav a{color:rgba(255,255,255,0.9); text-decoration:none; margin:0 14px; font-weight:600; font-size:14px}
+    nav a:hover{color:var(--accent)}
+
+    /* ---------- Intro overlay (black) ---------- */
+    #intro{
+      position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:#000; color:var(--accent); font-size:48px; z-index:60; transition:opacity 1.2s ease; 
+      -webkit-tap-highlight-color:transparent;
+    }
+    #intro.small{font-size:36px}
+
+    /* ---------- Hero / slideshow ---------- */
+    .hero{position:relative; height:100vh; width:100%; overflow:hidden}
+    .slides{position:absolute; inset:0}
+    .slides img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform-origin:center; opacity:0; transition:opacity 1s ease, transform 12s linear}
+    .slides img.visible{opacity:1}
+    /* small zoom for dynamic feel */
+    .slides img.visible{transform:scale(1.06)}
+
+    /* gradient overlay to improve contrast for header text */
+    .hero::after{content:''; position:absolute; left:0; right:0; bottom:0; height:35%; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(7,17,26,0.85) 100%); pointer-events:none}
+
+    /* ---------- Main content ---------- */
+    main{position:relative; z-index:30; margin-top:0}
+    section{max-width:var(--max-width); margin:0 auto; padding:72px 24px; background:transparent}
+    .container{max-width:1100px; margin:0 auto}
+
+    h2{color:#fff; font-size:28px; margin:0 0 14px}
+    p.lead{color:var(--muted); margin-top:6px}
+
+    /* Team cards */
+    .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:20px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:18px; box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+    .avatar{height:120px; border-radius:10px; object-fit:cover; width:100%}
+    .meta{margin-top:10px}
+    .meta h3{margin:0; font-size:18px}
+    .muted{color:var(--muted); font-size:14px}
+
+    /* Menu list */
+    .menu-list{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
+    .menu-item{background:var(--card); padding:14px; border-radius:10px}
+    .menu-item h4{margin:0 0 6px}
+    .price{color:var(--accent); font-weight:700}
+
+    /* Events */
+    .event{display:flex; gap:18px; align-items:flex-start; background:var(--glass); padding:16px; border-radius:10px}
+
+    /* Mission */
+    .mission{background:linear-gradient(90deg, rgba(214,180,106,0.06), rgba(255,255,255,0.02)); padding:22px; border-radius:10px}
+
+    /* Footer */
+    footer{background:#031018; color:var(--muted); padding:36px 24px; text-align:center}
+
+    /* Responsive */
+    @media (max-width:720px){
+      #intro{font-size:28px}
+      header{padding:10px 16px}
+      nav a{margin:0 8px; font-size:13px}
+      h2{font-size:22px}
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">SUSHI HOUSE</div>
-    <nav>
-      <a href="#workers">Our Team</a>
-      <a href="#food">Food</a>
-      <a href="#drinks">Drinks</a>
-      <a href="#events">Events</a>
-      <a href="#mission">Mission</a>
-    </nav>
+    <div class="header-inner">
+      <div class="logo">SUSHI HOUSE</div>
+      <nav>
+        <a href="#team">Our Team</a>
+        <a href="#food">Food</a>
+        <a href="#drinks">Drinks</a>
+        <a href="#events">Events</a>
+        <a href="#mission">Mission</a>
+      </nav>
+    </div>
   </header>
 
-  <div id="intro" style="position:fixed; top:0; left:0; width:100%; height:100vh; background:black; color:white; display:flex; justify-content:center; align-items:center; font-size:48px; z-index:20; transition:opacity 1.5s;">SUSHI HOUSE</div>
+  <!-- Intro overlay (black). Disappears on first interaction (click/tap). User chose option A -->
+  <div id="intro" role="banner">SUSHI HOUSE</div>
 
-  <div class="hero" onclick="hideIntro()">
-    <img src="/mnt/data/istockphoto-1053855452-612x612.jpg" />
-    <img src="/mnt/data/1440x0-1024x683.webp" />
-  </div>
-
-  <script>
-    function hideIntro(){
-      const intro = document.getElementById('intro');
-      intro.style.opacity = '0';
-      setTimeout(()=> intro.style.display='none', 1500);
-    }
-  </script>
-
-  <section id="workers">
-    <h2>Meet the Team</h2>
-    <p>Our skilled sushi chefs and hospitality staff are dedicated to providing exceptional dining experiences. (Replace with real info later.)</p>
+  <!-- Hero slideshow. Images use your uploaded local files. -->
+  <section class="hero" aria-label="Featured dishes">
+    <div class="slides" id="slides" onclick="hideIntro()">
+      <img src="/mnt/data/istockphoto-1053855452-612x612.jpg" alt="Sushi selection" class="visible"/>
+      <img src="/mnt/data/1440x0-1024x683.webp" alt="Restaurant table spread"/>
+      <!-- Add more images here when you upload them: e.g. /mnt/data/sushi3.jpg -->
+    </div>
   </section>
 
-  <section id="food">
-    <h2>Our Food</h2>
-    <p>Explore a curated list of sushi dishes. A detailed menu page can be linked later.</p>
-  </section>
+  <main>
+    <section id="team">
+      <div class="container">
+        <h2>Meet the Crew</h2>
+        <p class="lead">Our chefs and front-of-house team craft every dish with precision and care. Replace this placeholder text with real bios later.</p>
+        <div class="grid" style="margin-top:18px">
+          <div class="card">
+            <img class="avatar" src="/mnt/data/istockphoto-1053855452-612x612.jpg" alt="Chef" />
+            <div class="meta"><h3>Head Chef</h3><div class="muted">Expert in Edomae-style sushi</div></div>
+          </div>
+          <div class="card">
+            <img class="avatar" src="/mnt/data/1440x0-1024x683.webp" alt="Chef 2" />
+            <div class="meta"><h3>Sous Chef</h3><div class="muted">Seasonal menu development</div></div>
+          </div>
+          <div class="card">
+            <img class="avatar" src="/mnt/data/istockphoto-1053855452-612x612.jpg" alt="Server" />
+            <div class="meta"><h3>Floor Manager</h3><div class="muted">Hospitality & events</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section id="drinks">
-    <h2>Drinks</h2>
-    <p>A refined selection of beverages, cocktails, teas, and more.</p>
-  </section>
+    <section id="food">
+      <div class="container">
+        <h2>Food — Sushi Selections</h2>
+        <p class="lead">A preview list. Link to a full page/menu later for the fancy interactive menu.</p>
+        <div class="menu-list" style="margin-top:18px">
+          <div class="menu-item">
+            <h4>Chef's Omakase</h4>
+            <div class="muted">A rotating selection chosen by the chef.</div>
+            <div class="price">£65</div>
+          </div>
+          <div class="menu-item">
+            <h4>Salmon Nigiri (2 pcs)</h4>
+            <div class="muted">Seasonal salmon, sushi rice, house soy.</div>
+            <div class="price">£6.50</div>
+          </div>
+          <div class="menu-item">
+            <h4>California Roll (8 pcs)</h4>
+            <div class="muted">Crab, avocado, cucumber, sesame.</div>
+            <div class="price">£7.50</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section id="events">
-    <h2>Events</h2>
-    <p>We host seasonal sushi nights and private bookings. (Add details later.)</p>
-  </section>
+    <section id="drinks">
+      <div class="container">
+        <h2>Drinks</h2>
+        <p class="lead">Sake, curated wines, and crafted non-alcoholic options.</p>
+        <div style="display:flex; gap:18px; margin-top:16px; flex-wrap:wrap">
+          <div class="card" style="flex:1 1 220px"><h4>Junmai Sake</h4><div class="muted">Warm or chilled.</div></div>
+          <div class="card" style="flex:1 1 220px"><h4>Japanese Whisky</h4><div class="muted">Single malts & blends.</div></div>
+          <div class="card" style="flex:1 1 220px"><h4>Non-alcoholic</h4><div class="muted">House teas & sodas.</div></div>
+        </div>
+      </div>
+    </section>
 
-  <section id="mission">
-    <h2>Mission Statement</h2>
-    <p>Deliver authentic, fresh, and artistic sushi experiences with passion and craftsmanship.</p>
-  </section>
+    <section id="events">
+      <div class="container">
+        <h2>Events</h2>
+        <p class="lead">We host one signature event: an intimate seasonal tasting evening.</p>
+        <div class="event" style="margin-top:12px">
+          <div style="flex:1">
+            <h3 style="margin:0">Seasonal Sushi Tasting</h3>
+            <p class="muted">A carefully curated multi-course tasting showcasing the best seasonal fish and produce. Limited seats.</p>
+            <ul class="muted" style="margin:8px 0 0 18px">
+              <li>Date: Seasonal (check back)</li>
+              <li>Seats: Limited 12</li>
+              <li>Price: £85 per person (sample)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="container">
+        <h2>Mission</h2>
+        <div class="mission">
+          <p>To present sushi that respects tradition while embracing local, seasonal ingredients — prepared with precision, served with warmth.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Sushi House · Contact info and details can go here.</p>
+    <div class="container">
+      <div style="max-width:var(--max-width); margin:0 auto">© 2025 Sushi House — 45 Great Queen Street, Covent Garden · reservations@example.com</div>
+    </div>
   </footer>
+
+  <script>
+    /* ---------- Slideshow logic ---------- */
+    (function(){
+      const slides = document.querySelectorAll('#slides img');
+      let idx = 0;
+      const show = (i)=>{
+        slides.forEach((s,si)=> s.classList.toggle('visible', si===i));
+      }
+      // rotate every 8s
+      setInterval(()=>{ idx = (idx+1) % slides.length; show(idx); }, 8000);
+
+      // allow initial click anywhere to dismiss intro (option A)
+      window.hideIntro = function(){
+        const intro = document.getElementById('intro');
+        if(!intro) return;
+        intro.style.opacity = '0';
+        intro.style.pointerEvents = 'none';
+        setTimeout(()=> intro.remove(), 1200);
+      }
+
+      // also dismiss on any keypress or touchstart for accessibility
+      const dismiss = ()=>{ if(document.getElementById('intro')) hideIntro(); }
+      window.addEventListener('keydown', dismiss, {once:true});
+      window.addEventListener('touchstart', dismiss, {once:true});
+    })();
+  </script>
 </body>
 </html>
