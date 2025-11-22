@@ -1,44 +1,190 @@
-/* GENERAL RESET FOR HEADER */
+/* ========== GLOBAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #fafafa;
+  color: #111;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Elegant link style */
+a {
+  text-decoration: none;
+  color: #111;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+
+/* ========== HEADER ========== */
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  z-index: 10;
-  padding: 25px 40px;
+  padding: 25px 60px;
+  z-index: 1000;
   background: transparent;
+  display: flex;
+  justify-content: center;
+  transition: background 0.4s ease;
+}
+
+header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
 }
 
 .header-inner {
+  width: 100%;
+  max-width: 1500px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* LOGO */
 .logo {
-  font-family: "Helvetica Neue", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+
+/* NAV LINKS TOP RIGHT */
+nav a {
+  margin-left: 25px;
+  font-size: 16px;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.6s ease;
+}
+
+.slides img.visible {
+  opacity: 1;
+}
+
+/* make overlay darker like Margot */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* TEXT IN THE CENTER */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 70px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 6px;
+}
+
+.hero-text p {
+  margin-top: 15px;
+  color: #f5f5f5;
+  font-size: 22px;
   letter-spacing: 2px;
-  font-size: 18px;
-  font-weight: 500;
-  color: white;
 }
 
-/* NAVIGATION LINKS (TOP RIGHT) */
-.nav-links {
-  display: flex;
-  gap: 35px;
+/* ========== CONTENT SECTIONS ========== */
+.content-section {
+  max-width: 1100px;
+  margin: 120px auto;
+  padding: 0 30px;
 }
 
-.nav-links a {
-  text-decoration: none;
-  font-family: "Helvetica Neue", sans-serif;
+.content-section h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.muted {
+  color: #555;
   font-size: 15px;
-  letter-spacing: 1px;
-  color: white;
-  transition: opacity 0.25s ease;
 }
 
-.nav-links a:hover {
-  opacity: 0.6;
+/* ========== TEAM GRID ========== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.card .avatar {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ========== MENU LIST ========== */
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.menu-item h4 {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.price {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  color: #444;
+  font-size: 14px;
 }
