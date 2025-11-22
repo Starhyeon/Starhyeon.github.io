@@ -4,17 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sushi House</title>
-  <meta name="description" content="Sushi House — modern sushi restaurant" />
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <div class="header-inner">
       <div class="logo">SUSHI HOUSE</div>
       <nav>
-        <a href="#hero">Home</a>
-        <a href="#team">Our Team</a>
-        <a href="#food">Food</a>
+        <a href="#team">Team</a>
         <a href="#drinks">Drinks</a>
         <a href="#employees">Employees</a>
         <a href="#mission">Mission</a>
@@ -23,7 +21,7 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section id="hero" class="fullpage-section">
+  <section class="hero" id="hero">
     <div class="hero-overlay"></div>
     <div class="hero-text">
       <h1>SUSHI HOUSE</h1>
@@ -36,82 +34,69 @@
   </section>
 
   <!-- TEAM SECTION -->
-  <section id="team" class="fullpage-section">
+  <section id="team" class="page-section">
+    <div class="section-overlay"></div>
     <h2>Meet the Crew</h2>
     <div class="grid">
       <div class="card">
-        <img class="avatar" src="./images/sushi1.jpg" alt="Chef" />
+        <img class="avatar" src="./images/sushi1.jpg" alt="Head Chef" />
         <h3>Head Chef</h3>
-        <div class="muted">Expert in Edomae-style sushi</div>
+        <p class="muted">Expert in Edomae-style sushi</p>
       </div>
       <div class="card">
         <img class="avatar" src="./images/sushi2.jpg" alt="Sous Chef" />
         <h3>Sous Chef</h3>
-        <div class="muted">Seasonal menu development</div>
-      </div>
-      <div class="card">
-        <img class="avatar" src="./images/sushi1.jpg" alt="Floor Manager" />
-        <h3>Floor Manager</h3>
-        <div class="muted">Hospitality & events</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOD SECTION -->
-  <section id="food" class="fullpage-section">
-    <h2>Our Menu</h2>
-    <div class="menu-list">
-      <div class="menu-item">
-        <h4>Chef's Omakase</h4>
-        <div class="muted">A rotating selection chosen by the chef.</div>
-        <div class="price">£65</div>
-      </div>
-      <div class="menu-item">
-        <h4>Salmon Nigiri (2 pcs)</h4>
-        <div class="muted">Seasonal salmon, sushi rice, house soy.</div>
-        <div class="price">£6.50</div>
-      </div>
-      <div class="menu-item">
-        <h4>California Roll (8 pcs)</h4>
-        <div class="muted">Crab, avocado, cucumber, sesame.</div>
-        <div class="price">£7.50</div>
+        <p class="muted">Seasonal menu development</p>
       </div>
     </div>
   </section>
 
   <!-- DRINKS SECTION -->
-  <section id="drinks" class="fullpage-section">
+  <section id="drinks" class="page-section">
+    <div class="section-overlay"></div>
     <h2>Drinks</h2>
     <div class="grid">
-      <div class="card"><h4>Junmai Sake</h4><div class="muted">Warm or chilled.</div></div>
-      <div class="card"><h4>Japanese Whisky</h4><div class="muted">Single malts & blends.</div></div>
-      <div class="card"><h4>Non-alcoholic</h4><div class="muted">House teas & sodas.</div></div>
+      <div class="card">
+        <h3>Junmai Sake</h3>
+        <p class="muted">Warm or chilled</p>
+      </div>
+      <div class="card">
+        <h3>Japanese Whisky</h3>
+        <p class="muted">Single malts & blends</p>
+      </div>
+      <div class="card">
+        <h3>Non-alcoholic</h3>
+        <p class="muted">House teas & sodas</p>
+      </div>
     </div>
   </section>
 
   <!-- EMPLOYEES SECTION -->
-  <section id="employees" class="fullpage-section">
-    <h2>Employee Highlights</h2>
+  <section id="employees" class="page-section">
+    <div class="section-overlay"></div>
+    <h2>Employees</h2>
     <div class="grid">
       <div class="card">
-        <img class="avatar" src="./images/sushi2.jpg" alt="Employee" />
-        <h3>Jane Doe</h3>
-        <div class="muted">Front of House Manager</div>
+        <img class="avatar" src="./images/sushi1.jpg" alt="Floor Manager" />
+        <h3>Floor Manager</h3>
+        <p class="muted">Hospitality & events</p>
       </div>
       <div class="card">
-        <img class="avatar" src="./images/sushi1.jpg" alt="Employee" />
-        <h3>John Smith</h3>
-        <div class="muted">Head Sushi Chef</div>
+        <img class="avatar" src="./images/sushi2.jpg" alt="Server" />
+        <h3>Server</h3>
+        <p class="muted">Customer service excellence</p>
       </div>
     </div>
   </section>
 
   <!-- MISSION SECTION -->
-  <section id="mission" class="fullpage-section">
+  <section id="mission" class="page-section">
+    <div class="section-overlay"></div>
     <h2>Mission</h2>
     <p class="mission-text">To present sushi that respects tradition while embracing local, seasonal ingredients.</p>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>📍 45 Great Queen Street, Covent Garden</p>
     <p>📞 020-1234-5678 · ✉ reservations@example.com</p>
