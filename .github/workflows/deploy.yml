@@ -10,7 +10,7 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -25,8 +25,13 @@ jobs:
           cp script.js public/
           cp -r images public/
 
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: public
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          # folder inside repo to deploy
-          folder: public
+          artifact_name: github-pages
