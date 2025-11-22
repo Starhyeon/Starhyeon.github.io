@@ -71,7 +71,7 @@ nav a:hover {
 /* Hero Section */
 #hero {
   position: relative;
-  height: calc(100vh - 120px); /* Leaves space for footer */
+  height: calc(100vh - 100px); /* leaves space for footer */
   overflow: hidden;
 }
 
