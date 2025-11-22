@@ -1,24 +1,19 @@
 // HERO SLIDESHOW
 const slides = document.querySelectorAll('#slides img');
 let idx = 0;
-function show(i){ slides.forEach((s,n)=>s.classList.toggle('visible',n===i)); }
+function show(i){ slides.forEach((s,n)=>s.classList.toggle('visible', n===i)); }
 setInterval(()=>{ idx=(idx+1)%slides.length; show(idx); },8000);
 
-// SECTION NAVIGATION
-const navLinks = document.querySelectorAll('header nav a');
-function showSection(id){
-  document.querySelectorAll('.page-section').forEach(sec=>sec.classList.remove('active'));
-  const target = document.getElementById(id);
-  if(target) target.classList.add('active');
-}
+// NAVIGATION BETWEEN SECTIONS
+const navLinks = document.querySelectorAll('nav a');
+const sections = document.querySelectorAll('.page-section');
 
-// Attach nav events
 navLinks.forEach(link=>{
   link.addEventListener('click', e=>{
     e.preventDefault();
-    showSection(link.getAttribute('href').substring(1));
+    const target = link.getAttribute('data-section');
+    sections.forEach(sec => sec.classList.remove('active'));
+    const activeSection = document.getElementById(target);
+    if(activeSection) activeSection.classList.add('active');
   });
 });
-
-// Show hero by default
-document.getElementById('hero').classList.add('active');
