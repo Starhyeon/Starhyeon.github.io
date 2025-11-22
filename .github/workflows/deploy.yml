@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Copy site files
+      - name: Prepare public folder
         run: |
           rm -rf public
           mkdir public
@@ -27,3 +27,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+        with:
+          # folder inside repo to deploy
+          folder: public
