@@ -3,9 +3,7 @@ const slides = document.querySelectorAll('#slides img');
 let idx = 0;
 
 function showSlide(i) {
-  slides.forEach((s, n) => {
-    s.classList.toggle('visible', n === i);
-  });
+  slides.forEach((s, n) => s.classList.toggle('visible', n === i));
 }
 
 // Initial display
@@ -25,11 +23,7 @@ navLinks.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const target = link.getAttribute('data-section');
-
-    // Remove active class from all sections
     sections.forEach(sec => sec.classList.remove('active'));
-
-    // Activate target section
     const activeSection = document.getElementById(target);
     if (activeSection) activeSection.classList.add('active');
   });
