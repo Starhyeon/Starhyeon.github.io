@@ -20,7 +20,10 @@ jobs:
         run: |
           rm -rf public
           mkdir public
-          cp -r !(public|.github) public/
+          cp index.html public/
+          cp style.css public/
+          cp script.js public/
+          cp -r images public/
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
