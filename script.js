@@ -8,15 +8,13 @@ function show(i) {
 setInterval(() => {
   idx = (idx + 1) % slides.length;
   show(idx);
-}, 8000);
+}, 7000);
 
-// INTRO FADE OUT
 const intro = document.getElementById('intro');
-
-function hideIntro() {
-  intro.style.opacity = '0';
-  intro.style.pointerEvents = 'none';
-  setTimeout(() => intro.remove(), 800);
+if (intro) {
+  setTimeout(() => {
+    intro.style.opacity = '0';
+    intro.style.pointerEvents = 'none';
+    setTimeout(() => intro.remove(), 800);
+  }, 1200);
 }
-
-setTimeout(hideIntro, 1500);
