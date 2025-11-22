@@ -16,12 +16,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build files
+      - name: Prepare site files
         run: |
           mkdir public
-          cp -r ./* public/
+          shopt -s extglob
+          cp -r !(public) public/
 
-      - name: Upload build
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
