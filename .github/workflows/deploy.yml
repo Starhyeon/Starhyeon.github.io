@@ -17,13 +17,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Prepare site files
-        # Remove old public folder
         run: |
           rm -rf public
           mkdir public
-          # Copy only the site files (HTML, CSS, JS, images)
-          cp index.html styles.css script.js public/
-          cp -r images public/
+          # Copy all site files except public folder and .github
+          shopt -s extglob
+          cp -r !(public|.github) public/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
