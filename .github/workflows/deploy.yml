@@ -20,8 +20,8 @@ jobs:
         run: |
           rm -rf public
           mkdir public
-          # Copy all site files except public folder and .github
           shopt -s extglob
+          # copy all files except .github and public folder
           cp -r !(public|.github) public/
 
       - name: Upload artifact
