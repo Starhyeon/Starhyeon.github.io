@@ -6,82 +6,84 @@
   <title>Sushi House</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
-
   <!-- HEADER -->
   <header>
     <div class="header-inner">
       <div class="logo">SUSHI HOUSE</div>
-
-      <nav class="nav-links">
+      <nav>
+        <a href="#hero">Home</a>
         <a href="#team">Our Team</a>
-        <a href="#food">Food</a>
+        <a href="#food">Menu</a>
         <a href="#mission">Mission</a>
       </nav>
     </div>
   </header>
 
-
   <!-- HERO SECTION -->
-  <section class="hero" id="hero">
+  <section class="page-section" id="hero">
     <div class="hero-overlay"></div>
-
     <div class="hero-text">
       <h1>SUSHI HOUSE</h1>
-      <p>Tradition meets taste.</p>
+      <p>Tradition meets taste</p>
     </div>
-
     <div class="slides" id="slides">
       <img src="./images/istockphoto-1053855452-612x612.jpg" alt="Sushi selection" class="visible" />
       <img src="./images/sushi2.jpg" alt="Restaurant table spread" />
     </div>
   </section>
 
-
-  <!-- MAIN CONTENT -->
-  <main>
-
-    <!-- TEAM SECTION -->
-    <section id="team" class="content-section">
-      <h2>Meet the Crew</h2>
-
-      <div class="grid">
-        <div class="card">
-          <img class="avatar" src="./images/sushi1.jpg" alt="Chef" />
-          <h3>Head Chef</h3>
-          <div class="muted">Expert in Edomae-style sushi</div>
-        </div>
-        <!-- more cards -->
+  <!-- TEAM SECTION -->
+  <section class="page-section" id="team">
+    <h2>Meet the Crew</h2>
+    <div class="grid">
+      <div class="card">
+        <img class="avatar" src="./images/sushi1.jpg" alt="Head Chef" />
+        <h3>Head Chef</h3>
+        <div class="muted">Expert in Edomae-style sushi</div>
       </div>
-    </section>
-
-
-    <!-- FOOD SECTION -->
-    <section id="food" class="content-section">
-      <h2>Our Menu</h2>
-
-      <div class="menu-list">
-        <div class="menu-item">
-          <h4>Chef's Omakase</h4>
-          <div class="muted">A rotating selection chosen by the chef.</div>
-          <div class="price">£65</div>
-        </div>
-        <!-- more food items -->
+      <div class="card">
+        <img class="avatar" src="./images/sushi2.jpg" alt="Sous Chef" />
+        <h3>Sous Chef</h3>
+        <div class="muted">Seasonal menu development</div>
       </div>
-    </section>
+      <div class="card">
+        <img class="avatar" src="./images/sushi1.jpg" alt="Floor Manager" />
+        <h3>Floor Manager</h3>
+        <div class="muted">Hospitality & events</div>
+      </div>
+    </div>
+  </section>
 
+  <!-- FOOD SECTION -->
+  <section class="page-section" id="food">
+    <h2>Our Menu</h2>
+    <div class="menu-list">
+      <div class="menu-item">
+        <h4>Chef's Omakase</h4>
+        <div class="muted">A rotating selection chosen by the chef.</div>
+        <div class="price">£65</div>
+      </div>
+      <div class="menu-item">
+        <h4>Salmon Nigiri (2 pcs)</h4>
+        <div class="muted">Seasonal salmon, sushi rice, house soy.</div>
+        <div class="price">£6.50</div>
+      </div>
+      <div class="menu-item">
+        <h4>California Roll (8 pcs)</h4>
+        <div class="muted">Crab, avocado, cucumber, sesame.</div>
+        <div class="price">£7.50</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- MISSION SECTION -->
-    <section id="mission" class="content-section">
-      <h2>Our Mission</h2>
-      <p class="muted">
-        We bring traditional Japanese craftsmanship together with modern taste.
-      </p>
-    </section>
-
-  </main>
-
+  <!-- MISSION SECTION -->
+  <section class="page-section" id="mission">
+    <h2>Our Mission</h2>
+    <p class="mission-text">
+      To present sushi that respects tradition while embracing local, seasonal ingredients.
+    </p>
+  </section>
 
   <!-- FOOTER -->
   <footer>
@@ -92,3 +94,4 @@
   <script src="./script.js"></script>
 </body>
 </html>
+
