@@ -21,20 +21,22 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section id="hero" class="page-section active">
-    <div class="slides" id="slides">
-      <img src="./images/istock-new.jpg" alt="Sushi selection" class="visible" />
+  <section id="hero" class="page-section active" aria-label="hero">
+    <div class="slides" id="slides" aria-hidden="false">
+      <img src="./images/istock-new.jpg" alt="Sushi selection" />
       <img src="./images/istockphoto-new.webp" alt="Restaurant table spread" />
     </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-text">
+
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-text" role="banner">
       <h1>SUSHI HOUSE</h1>
       <p>Tradition meets taste.</p>
     </div>
   </section>
 
   <!-- TEAM SECTION -->
-  <section id="team" class="page-section">
+  <section id="team" class="page-section" aria-label="team">
     <h2>Meet the Crew</h2>
     <div class="grid">
       <div class="card">
@@ -56,7 +58,7 @@
   </section>
 
   <!-- DRINKS SECTION -->
-  <section id="drinks" class="page-section">
+  <section id="drinks" class="page-section" aria-label="drinks">
     <h2>Drinks</h2>
     <div class="grid">
       <div class="card"><h4>Junmai Sake</h4><div class="muted">Warm or chilled.</div></div>
@@ -66,7 +68,7 @@
   </section>
 
   <!-- EMPLOYEES SECTION -->
-  <section id="employees" class="page-section">
+  <section id="employees" class="page-section" aria-label="employees">
     <h2>Our Team Members</h2>
     <div class="grid">
       <div class="card">
@@ -83,7 +85,7 @@
   </section>
 
   <!-- MISSION SECTION -->
-  <section id="mission" class="page-section">
+  <section id="mission" class="page-section" aria-label="mission">
     <h2>Mission</h2>
     <p class="mission-text">To present sushi that respects tradition while embracing local, seasonal ingredients.</p>
   </section>
@@ -97,3 +99,4 @@
   <script src="./script.js"></script>
 </body>
 </html>
+
