@@ -1,21 +1,30 @@
-// HERO SLIDESHOW
-const slides = document.querySelectorAll('#slides img');
+// --- HERO SLIDESHOW (opacity-based, robust) ---
+const slides = Array.from(document.querySelectorAll('#slides img'));
 let idx = 0;
 
-function showSlide(i) {
-  slides.forEach((s, n) => s.classList.toggle('visible', n === i));
+function showSlide(i){
+  slides.forEach((el, n) => {
+    if(n === i){
+      el.classList.add('visible');
+      el.setAttribute('aria-hidden', 'false');
+    } else {
+      el.classList.remove('visible');
+      el.setAttribute('aria-hidden', 'true');
+    }
+  });
 }
 
-// Initial display
-showSlide(idx);
+// show first slide immediately
+if(slides.length) showSlide(0);
 
-// Change slide every 8 seconds
-setInterval(() => {
+// interval
+setInterval(()=> {
+  if(!slides.length) return;
   idx = (idx + 1) % slides.length;
   showSlide(idx);
 }, 8000);
 
-// NAVIGATION BETWEEN SECTIONS
+// --- NAVIGATION BETWEEN SECTIONS (smooth + no page reload) ---
 const navLinks = document.querySelectorAll('nav a');
 const sections = document.querySelectorAll('.page-section');
 
@@ -23,8 +32,15 @@ navLinks.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const target = link.getAttribute('data-section');
-    sections.forEach(sec => sec.classList.remove('active'));
-    const activeSection = document.getElementById(target);
-    if (activeSection) activeSection.classList.add('active');
+    if(!target) return;
+    const targetEl = document.getElementById(target);
+    if(!targetEl) return;
+
+    // toggle active
+    sections.forEach(s => s.classList.remove('active'));
+    targetEl.classList.add('active');
+
+    // scroll to top smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
