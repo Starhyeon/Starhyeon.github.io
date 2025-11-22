@@ -3,12 +3,16 @@ name: Deploy static site to GitHub Pages
 on:
   push:
     branches:
-      - main   # change if your branch is different
+      - main   # change to 'master' if your repo uses master
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -20,10 +24,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      # Upload *all* static files to GitHub Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: '.'  # your site files are in the root
+          path: '.'   # root folder = your actual site
 
   deploy:
     needs: build
