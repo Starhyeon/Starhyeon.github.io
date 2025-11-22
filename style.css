@@ -12,9 +12,8 @@
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
   height: 100%;
+  margin: 0;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--bg);
   color: #fff;
@@ -30,9 +29,9 @@ header {
   right: 0;
   height: 72px;
   background: rgba(7, 17, 26, 0.9);
-  z-index: 120;
   display: flex;
   align-items: center;
+  z-index: 120;
   backdrop-filter: blur(4px);
   padding: 0 20px;
 }
@@ -50,7 +49,7 @@ header {
   color: var(--accent);
   font-weight: 900;
   letter-spacing: 3px;
-  font-size: 36px;
+  font-size: 36px; /* top-left logo slightly bigger */
 }
 
 nav a {
@@ -58,19 +57,20 @@ nav a {
   text-decoration: none;
   margin-left: 22px;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 17px; /* nav link size */
   cursor: pointer;
+  transition: color 0.2s;
 }
 
 nav a:hover {
   color: var(--accent);
 }
 
-/* Page Sections */
+/* Page sections general */
 .page-section {
   display: none;
   min-height: 100vh;
-  padding: 100px 20px 160px; /* header + bottom spacing */
+  padding: 100px 20px 160px; /* top for header, bottom for footer peek */
   position: relative;
   background-size: cover;
   background-position: center;
@@ -80,11 +80,12 @@ nav a:hover {
   display: block;
 }
 
-/* Hero Section */
+/* Hero section */
 #hero {
   position: relative;
-  height: 100vh; /* fullscreen hero */
+  min-height: 100vh; /* full viewport initially */
   overflow: hidden;
+  padding-bottom: 60px; /* allow bottom content peek */
 }
 
 .slides {
@@ -102,6 +103,7 @@ nav a:hover {
   opacity: 0;
   transition: opacity 1.2s ease, transform 12s linear;
   transform: scale(1);
+  backface-visibility: hidden;
 }
 
 .slides img.visible {
@@ -109,7 +111,7 @@ nav a:hover {
   transform: scale(1.06);
 }
 
-/* overlay to darken hero images */
+/* Hero overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -120,25 +122,28 @@ nav a:hover {
 /* Hero text */
 .hero-text {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   z-index: 3;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -48%);
   text-align: center;
   width: 100%;
   max-width: 1100px;
   padding: 0 12px;
+  animation: mist 12s ease-in-out infinite alternate;
 }
 
 .hero-text h1 {
   margin: 0;
   color: var(--accent);
   font-weight: 900;
-  font-size: 80px;
+  font-size: 80px; /* centered hero title */
   line-height: 0.95;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-shadow: 0 0 14px rgba(214,180,106,0.32), 0 0 4px rgba(214,180,106,0.18);
+  text-shadow:
+    0 0 14px rgba(214,180,106,0.32),
+    0 0 4px rgba(214,180,106,0.18);
 }
 
 .hero-text p {
@@ -147,16 +152,22 @@ nav a:hover {
   color: rgba(255,255,255,0.95);
 }
 
+/* Mist animation */
+@keyframes mist {
+  from { transform: translate(-50%, -46%); }
+  to { transform: translate(-50%, -50%); }
+}
+
 /* Section headings */
 .page-section h2 {
   font-size: 42px;
-  font-weight: 700;
   margin: 0 0 18px;
   text-align: center;
   color: var(--accent);
+  font-weight: 700;
 }
 
-/* Grid & Cards */
+/* Grid & cards */
 .grid {
   display: grid;
   gap: 18px;
@@ -168,7 +179,7 @@ nav a:hover {
   padding: 16px;
   border-radius: 12px;
   text-align: center;
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  transition: transform .28s ease, box-shadow .28s ease;
 }
 
 .card:hover {
@@ -183,7 +194,7 @@ nav a:hover {
   border-radius: 10px;
 }
 
-/* muted text */
+/* Muted text */
 .muted {
   color: var(--muted);
 }
@@ -221,8 +232,8 @@ footer {
   .logo { font-size: 26px; }
   nav a { font-size: 15px; margin-left: 16px; }
   .page-section { padding: 90px 14px 140px; }
-  #hero { height: 100vh; }
-  .hero-text { top: 50%; transform: translate(-50%, -50%); }
+  #hero { min-height: calc(100vh - 140px); }
+  .hero-text { top: 49%; }
   .hero-text h1 { font-size: 42px; letter-spacing: 1px; }
   .hero-text p { font-size: 15px; }
   .page-section h2 { font-size: 28px; }
