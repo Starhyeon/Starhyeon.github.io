@@ -1,22 +1,150 @@
 :root {
-  --bg:#07111a; 
+  --bg:#07111a;
+  --card:#0f1c23;
   --accent:#d6b46a;
+  --muted:#98a1a6;
 }
 
-*{box-sizing:border-box}
-body{margin:0; font-family:Inter, sans-serif; background:var(--bg); color:#e6eef3;}
+/* Base */
+body {
+  margin:0;
+  font-family:Inter, system-ui, sans-serif;
+  background:var(--bg);
+  color:white;
+}
 
-header{position:fixed; top:0; width:100%; height:72px; display:flex; align-items:center; justify-content:space-between; padding:0 32px; background:var(--bg);}
-.logo{color:var(--accent); font-weight:700; font-size:18px;}
-nav a{color:#e6eef3; margin-left:20px; text-decoration:none; font-weight:600;}
-nav a:hover{color:var(--accent);}
+/* Header */
+header {
+  position:fixed;
+  top:0;
+  width:100%;
+  height:72px;
+  background:var(--bg);
+  display:flex;
+  align-items:center;
+  z-index:50;
+}
 
+.header-inner {
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+}
+
+.logo {
+  color:var(--accent);
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+nav a {
+  color:white;
+  text-decoration:none;
+  margin-left:22px;
+  font-weight:600;
+}
+nav a:hover {color:var(--accent);}
+
+/* Fullscreen intro */
 #intro {
-  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
-  background:#000; color:var(--accent); font-size:48px; z-index:60;
-  transition:opacity 0.6s ease;
+  position:fixed;
+  inset:0;
+  background:black;
+  color:var(--accent);
+  font-size:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:80;
+  transition:opacity 0.8s ease;
 }
 
-.hero {height:100vh; width:100%; overflow:hidden; position:relative;}
-.slides img {position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 1s ease, transform 12s linear;}
-.slides img.visible {opacity:1; transform:scale(1.06);}
+/* HERO FULLWIDTH BACKGROUND */
+.hero {
+  height:100vh;
+  width:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Slideshow */
+.slides img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s ease, transform 10s linear;
+}
+
+.slides img.visible {
+  opacity:1;
+  transform:scale(1.06);
+}
+
+/* Content sections */
+.content-section {
+  max-width:1200px;
+  margin:80px auto;
+  padding:20px;
+}
+
+/* Cards, menu, grid */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+}
+
+.card {
+  background:var(--card);
+  padding:16px;
+  border-radius:12px;
+}
+
+.avatar {
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.menu-list {
+  display:grid;
+  gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+
+.menu-item {
+  background:var(--card);
+  padding:16px;
+  border-radius:12px;
+}
+
+.price {color:var(--accent); font-weight:700;}
+.muted {color:var(--muted);}
+
+/* Events */
+.event {
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:12px;
+}
+
+/* Mission */
+.mission-text {
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:12px;
+}
+
+/* NEW SIMPLE FOOTER */
+footer {
+  text-align:center;
+  padding:30px;
+  background:#031018;
+  color:var(--muted);
+}
