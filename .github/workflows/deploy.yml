@@ -17,10 +17,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Prepare site files
+        # Clean public folder and copy everything correctly
         run: |
+          rm -rf public
           mkdir public
-          shopt -s extglob
-          cp -r !(public) public/
+          cp -r * public/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -33,7 +34,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
 
     steps:
       - name: Download artifact
