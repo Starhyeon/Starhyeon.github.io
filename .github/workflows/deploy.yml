@@ -2,17 +2,12 @@ name: Deploy static site to GitHub Pages
 
 on:
   push:
-    branches:
-      - main   # change to 'master' if your repo uses master
+    branches: ["main"]
 
 permissions:
   contents: read
   pages: write
   id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
   build:
@@ -21,22 +16,30 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Build files
+        run: |
+          mkdir public
+          cp -r ./* public/
 
-      # Upload *all* static files to GitHub Pages
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload build
+        uses: actions/upload-artifact@v4
         with:
-          path: '.'   # root folder = your actual site
+          name: github-pages
+          path: public
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url }}
+
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: deploy
         uses: actions/deploy-pages@v4
