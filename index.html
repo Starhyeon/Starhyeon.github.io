@@ -6,11 +6,15 @@
   <title>Sushi House</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header>
     <div class="header-inner">
       <div class="logo">SUSHI HOUSE</div>
-      <nav>
+
+      <nav class="nav-links">
         <a href="#team">Our Team</a>
         <a href="#food">Food</a>
         <a href="#mission">Mission</a>
@@ -18,21 +22,30 @@
     </div>
   </header>
 
+
+  <!-- HERO SECTION -->
   <section class="hero" id="hero">
     <div class="hero-overlay"></div>
+
     <div class="hero-text">
       <h1>SUSHI HOUSE</h1>
       <p>Tradition meets taste.</p>
     </div>
+
     <div class="slides" id="slides">
       <img src="./images/istockphoto-1053855452-612x612.jpg" alt="Sushi selection" class="visible" />
       <img src="./images/sushi2.jpg" alt="Restaurant table spread" />
     </div>
   </section>
 
+
+  <!-- MAIN CONTENT -->
   <main>
+
+    <!-- TEAM SECTION -->
     <section id="team" class="content-section">
       <h2>Meet the Crew</h2>
+
       <div class="grid">
         <div class="card">
           <img class="avatar" src="./images/sushi1.jpg" alt="Chef" />
@@ -43,8 +56,11 @@
       </div>
     </section>
 
+
+    <!-- FOOD SECTION -->
     <section id="food" class="content-section">
       <h2>Our Menu</h2>
+
       <div class="menu-list">
         <div class="menu-item">
           <h4>Chef's Omakase</h4>
@@ -54,8 +70,20 @@
         <!-- more food items -->
       </div>
     </section>
+
+
+    <!-- MISSION SECTION -->
+    <section id="mission" class="content-section">
+      <h2>Our Mission</h2>
+      <p class="muted">
+        We bring traditional Japanese craftsmanship together with modern taste.
+      </p>
+    </section>
+
   </main>
 
+
+  <!-- FOOTER -->
   <footer>
     <p>📍 45 Great Queen Street, Covent Garden</p>
     <p>📞 020-1234-5678 · ✉ reservations@example.com</p>
@@ -64,4 +92,3 @@
   <script src="./script.js"></script>
 </body>
 </html>
-
