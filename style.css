@@ -38,15 +38,17 @@ header {
 
 .logo {
   color: var(--accent);
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  font-size: 32px; /* bigger top-left logo */
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin-left: 22px;
+  margin-left: 24px;
   font-weight: 600;
+  font-size: 18px; /* slightly bigger nav links */
   cursor: pointer;
 }
 
@@ -71,7 +73,7 @@ nav a:hover {
 /* Hero Section */
 #hero {
   position: relative;
-  height: calc(100vh - 100px); /* leaves space for footer */
+  height: calc(100vh - 120px); /* leaves space for footer */
   overflow: hidden;
 }
 
@@ -113,14 +115,23 @@ nav a:hover {
 }
 
 .hero-text h1 {
-  font-size: 48px;
+  font-size: 72px; /* bigger centered hero title */
+  font-weight: 900;
   margin: 0;
   color: var(--accent);
 }
 
 .hero-text p {
-  font-size: 20px;
+  font-size: 24px; /* slightly bigger tagline */
   margin-top: 10px;
+}
+
+/* Section Headings */
+.page-section h2 {
+  font-size: 36px; /* bigger section titles */
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Grid & Cards */
@@ -146,6 +157,49 @@ nav a:hover {
 
 .muted {
   color: var(--muted);
+}
+
+.mission-text {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  background: #031018;
+  color: var(--muted);
+  position: relative;
+  z-index: 10;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 48px; /* scales hero text down on mobile */
+  }
+  
+  .hero-text p {
+    font-size: 18px;
+  }
+  
+  .page-section h2 {
+    font-size: 28px;
+  }
+  
+  .avatar {
+    height: 120px;
+  }
+  
+  .logo {
+    font-size: 26px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
 }
 
 .mission-text {
