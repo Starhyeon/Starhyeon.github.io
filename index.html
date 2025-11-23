@@ -6,9 +6,7 @@
   <title>Sushi House</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
-
   <!-- HEADER -->
   <header>
     <div class="header-inner">
@@ -25,7 +23,6 @@
 
   <!-- HERO SECTION -->
   <section id="hero" class="page-section active" aria-label="hero">
-    
     <div class="slides" id="slides">
       <img src="./images/istock-new.jpg" alt="Sushi selection" />
       <img src="./images/image-new.jpg" alt="Restaurant dining table" />
@@ -38,45 +35,48 @@
       <h1>SUSHI HOUSE</h1>
       <p>Tradition meets taste.</p>
     </div>
-
   </section>
 
-  <!-- TEAM SECTION (NEW IMPROVED VERSION) -->
+  <!-- TEAM SECTION -->
   <section id="team" class="page-section" aria-label="team">
     <h2>Meet the Crew</h2>
 
     <div class="team-wrapper">
+      <p class="team-desc">
+        Our kitchen and floor teams uphold the spirit of Japanese hospitality,
+        crafting every detail with precision, calmness, and pride.
+      </p>
 
-      <div class="team-grid">
+      <!-- Top row: 3 roles -->
+      <div class="team-row">
+        <article class="team-card">
+          <div class="team-avatar"></div>
+          <h3 class="team-name">Head Chef</h3>
+          <p class="team-role">Edomae-style sushi specialist</p>
+        </article>
 
-        <div class="team-card">
-          <img src="./images/sushi1.jpg" alt="Head Chef" />
-          <h3>Head Chef</h3>
-          <div class="muted">Master of Edomae-style sushi</div>
-        </div>
+        <article class="team-card">
+          <div class="team-avatar"></div>
+          <h3 class="team-name">Sous Chef</h3>
+          <p class="team-role">Seasonal menu development</p>
+        </article>
 
-        <div class="team-card">
-          <img src="./images/sushi2.jpg" alt="Sous Chef" />
-          <h3>Sous Chef</h3>
-          <div class="muted">Seasonal menu specialist</div>
-        </div>
-
-        <div class="team-card">
-          <img src="./images/sushi1.jpg" alt="Floor Manager" />
-          <h3>Floor Manager</h3>
-          <div class="muted">Hospitality & guest experience</div>
-        </div>
-
-        <div class="team-card">
-          <img src="./images/sushi2.jpg" alt="Restaurant Manager" />
-          <h3>Restaurant Manager</h3>
-          <div class="muted">Operations & leadership</div>
-        </div>
-
+        <article class="team-card">
+          <div class="team-avatar"></div>
+          <h3 class="team-name">Floor Manager</h3>
+          <p class="team-role">Hospitality & events</p>
+        </article>
       </div>
 
+      <!-- Bottom row: Manager centered -->
+      <div class="team-row manager-row">
+        <article class="team-card">
+          <div class="team-avatar"></div>
+          <h3 class="team-name">Restaurant Manager</h3>
+          <p class="team-role">Operations & guest experience</p>
+        </article>
+      </div>
     </div>
-
   </section>
 
   <!-- DRINKS SECTION -->
@@ -101,21 +101,18 @@
   <!-- EMPLOYEES SECTION -->
   <section id="employees" class="page-section" aria-label="employees">
     <h2>Our Team Members</h2>
-
     <div class="grid">
       <div class="card">
         <img class="avatar" src="./images/sushi1.jpg" alt="Employee 1" />
         <h3>Employee 1</h3>
         <div class="muted">Front of House</div>
       </div>
-
       <div class="card">
         <img class="avatar" src="./images/sushi2.jpg" alt="Employee 2" />
         <h3>Employee 2</h3>
         <div class="muted">Kitchen Assistant</div>
       </div>
     </div>
-
   </section>
 
   <!-- MISSION SECTION -->
@@ -135,4 +132,3 @@
   <script src="./script.js"></script>
 </body>
 </html>
-
