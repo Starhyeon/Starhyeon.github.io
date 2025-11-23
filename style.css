@@ -133,7 +133,7 @@ nav a:hover { color: var(--accent); }
   font-weight: 700;
 }
 
-/* Grid & Cards */
+/* Generic Grid & Cards (for Drinks / Employees) */
 .grid {
   display: grid;
   gap: 18px;
@@ -169,6 +169,67 @@ nav a:hover { color: var(--accent); }
   border-radius: 12px;
 }
 
+/* TEAM SECTION (new layout) */
+#team {
+  background: #050d14; /* slight variation to separate visually */
+}
+
+.team-subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin: 6px auto 32px;
+  font-size: 15px;
+  max-width: 520px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: #0b1820;
+  border-radius: 14px;
+  padding: 18px 16px 20px;
+  text-align: center;
+  max-width: 240px;
+  flex: 0 1 240px;
+  border: 1px solid rgba(214,180,106,0.18);
+  box-shadow: 0 14px 24px rgba(0,0,0,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.45);
+}
+
+.team-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  margin: 0 auto 12px;
+  background: radial-gradient(circle at 30% 20%, #273642, #050b10);
+  overflow: hidden;
+}
+
+.team-name {
+  font-size: 18px;
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.team-role {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
 /* Footer */
 footer {
   background: #031018;
@@ -186,6 +247,7 @@ footer {
   nav a { font-size: 16px; }
   .page-section h2 { font-size: 36px; }
 }
+
 @media (max-width: 768px) {
   header { height: 64px; padding: 0 14px; }
   .header-inner { padding: 0 8px; }
@@ -199,4 +261,12 @@ footer {
   .page-section h2 { font-size: 28px; }
   .avatar { height: 120px; }
   .grid { gap: 12px; }
+
+  .team-grid {
+    gap: 18px;
+  }
+  .team-card {
+    max-width: 260px;
+    flex: 0 1 260px;
+  }
 }
