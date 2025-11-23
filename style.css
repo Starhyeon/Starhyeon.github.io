@@ -18,45 +18,43 @@ body {
 /* Header */
 header {
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: 0; left: 0; right: 0;
   height: 72px;
-  background: rgba(7, 17, 26, 0.9);
+  background: rgba(7,17,26,0.9);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
-  padding: 0 22px;
   z-index: 120;
+  padding: 0 20px;
 }
-
 .header-inner {
   width: 100%;
   max-width: var(--site-width);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-
 .logo {
   color: var(--accent);
-  font-size: 36px;
   font-weight: 900;
+  font-size: 36px;
   letter-spacing: 3px;
 }
-
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  margin-left: 24px;
+  margin-left: 22px;
+  font-size: 17px;
   font-weight: 600;
 }
 nav a:hover { color: var(--accent); }
 
-/* Sections */
+/* Page Sections */
 .page-section {
   display: none;
   min-height: 100vh;
-  padding: 100px 20px;
+  padding: 120px 20px 60px;
 }
 .page-section.active { display: block; }
 
@@ -66,7 +64,10 @@ nav a:hover { color: var(--accent); }
   min-height: 100vh;
   overflow: hidden;
 }
-
+.slides {
+  position: absolute;
+  inset: 0;
+}
 .slides img {
   position: absolute;
   inset: 0;
@@ -76,106 +77,98 @@ nav a:hover { color: var(--accent); }
   opacity: 0;
   transition: opacity 1s ease, transform 10s linear;
 }
-
-.slides img.visible {
-  opacity: 1;
-  transform: scale(1.06);
-}
+.slides img.visible { opacity: 1; transform: scale(1.06); }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
 }
-
 .hero-text {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  z-index: 2;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
 .hero-text h1 {
-  font-size: 80px;
   color: var(--accent);
+  font-size: 80px;
   font-weight: 900;
-  letter-spacing: 2px;
+  margin: 0;
+}
+.hero-text p {
+  margin-top: 12px;
+  font-size: 24px;
+  color: rgba(255,255,255,0.95);
 }
 
-/* TEAM SECTION */
+/* TEAM SECTION — FULL UPGRADE */
 .team-title {
   text-align: center;
-  font-size: 46px;
-  color: var(--accent);
+  font-size: 48px;
   font-weight: 800;
+  color: var(--accent);
   margin-bottom: 10px;
 }
-
-.team-subtitle {
-  text-align: center;
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-
 .team-divider {
-  width: 100px;
+  width: 120px;
   height: 3px;
   background: var(--accent);
-  margin: 0 auto 40px;
-  border-radius: 2px;
+  margin: 0 auto 20px auto;
+  opacity: 0.9;
+  border-radius: 3px;
+}
+.team-intro {
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto 40px auto;
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .team-grid {
-  display: flex;
-  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
-  flex-wrap: wrap;
-}
-
-.team-grid-center {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
+  justify-items: center;
 }
 
 .team-card {
-  width: 270px;
   background: var(--card);
-  padding: 18px;
+  padding: 26px;
   border-radius: 14px;
+  width: 100%;
+  max-width: 330px;
   text-align: center;
-  border: 1px solid rgba(214, 180, 106, 0.15);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+  transition: 0.3s ease;
 }
 
 .team-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
 }
 
-.team-img {
+.avatar {
   width: 100%;
-  height: 180px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
+  height: 260px;
+  background: #14242f;
+  border-radius: 14px;
   margin-bottom: 14px;
 }
 
-.team-card h3 {
-  margin: 0;
-  color: var(--accent);
-  font-size: 20px;
-  font-weight: 700;
+.full-width-center {
+  grid-column: 1 / -1;
+  max-width: 360px;
+  margin: 0 auto;
 }
 
-.team-card .role {
-  color: var(--muted);
-  margin-top: 4px;
-  font-size: 14px;
-}
-
-/* OTHER SECTIONS (unchanged) */
+/* Grid (other sections) */
 .grid {
   display: grid;
   gap: 18px;
@@ -189,18 +182,25 @@ nav a:hover { color: var(--accent); }
   text-align: center;
 }
 
-.avatar {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 10px;
+.muted {
+  color: var(--muted);
 }
 
+/* Mission */
+.mission-text {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+}
+
+/* Footer */
 footer {
-  text-align: center;
   padding: 60px 20px;
-  background: #031018;
+  text-align: center;
   color: var(--muted);
+  background: #031018;
 }
 
 
