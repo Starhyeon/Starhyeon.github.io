@@ -139,11 +139,7 @@ nav a:hover::after {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-      circle at top,
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.35)
-  );
+  background: radial-gradient(circle at top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35));
   z-index: 1;
 }
 
@@ -215,7 +211,7 @@ nav a:hover::after {
   width: 70px;
 }
 
-/* TEAM / CREW LAYOUT */
+/* TEAM / CREW */
 
 #team {
   background: radial-gradient(circle at top, #091624 0, #050c14 55%, #04070b 100%);
@@ -225,7 +221,6 @@ nav a:hover::after {
   text-align: center;
 }
 
-/* 👉 EDIT #1 — bigger card layout */
 .crew-grid {
   display: grid;
   grid-auto-rows: 1fr;
@@ -234,26 +229,24 @@ nav a:hover::after {
 }
 
 .crew-grid-top {
-  grid-template-columns: repeat(3, minmax(260px, 1fr)); /* WAS 230px */
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
   justify-content: center;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* bottom (manager) */
 .crew-grid-bottom {
-  grid-template-columns: minmax(300px, 380px); /* WAS 260–340px */
+  grid-template-columns: minmax(300px, 380px);
   justify-content: center;
   max-width: 420px;
   margin: 34px auto 0;
 }
 
-/* 👉 EDIT #2 — card padding slightly bigger */
 .crew-card {
   background: radial-gradient(circle at top left, #182836 0, #0a151f 55%, #060d14 100%);
   border-radius: 16px;
-  padding: 28px 26px 24px; /* WAS 24px 22px 22px */
+  padding: 28px 26px 24px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
   position: relative;
   overflow: hidden;
@@ -274,9 +267,8 @@ nav a:hover::after {
   box-shadow: 0 26px 55px rgba(0, 0, 0, 0.7);
 }
 
-/* 👉 EDIT #3 — bigger photo */
 .crew-photo {
-  height: 160px; /* WAS 130px */
+  height: 160px;
   border-radius: 12px;
   margin-bottom: 22px;
   background:
@@ -285,8 +277,6 @@ nav a:hover::after {
     linear-gradient(135deg, #121f2b 0, #060d14 55%, #050a10 100%);
   border: 1px solid rgba(214, 180, 106, 0.18);
 }
-
-/* text inside crew cards */
 
 .crew-name {
   margin: 0 0 4px;
@@ -301,7 +291,7 @@ nav a:hover::after {
   color: var(--muted);
 }
 
-/* GENERIC GRID + CARDS FOR OTHER SECTIONS */
+/* GENERIC GRID (DRINKS + EMPLOYEES) */
 
 .grid {
   display: grid;
@@ -358,13 +348,6 @@ nav a:hover::after {
   border: 1px solid rgba(214, 180, 106, 0.14);
 }
 
-/* MUTED TEXT */
-
-.muted {
-  color: var(--muted);
-  font-size: 13px;
-}
-
 /* FOOTER */
 
 footer {
@@ -375,55 +358,71 @@ footer {
   font-size: 13px;
 }
 
+/* ---------------------------------- */
+/*         FOOD MENU (NEW)            */
+/* ---------------------------------- */
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.food-item {
+  display: flex;
+  gap: 22px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 18px 34px rgba(0,0,0,0.45);
+  border: 1px solid rgba(214,180,106,0.15);
+}
+
+.food-item img {
+  width: 200px;
+  height: 200px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.food-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.food-title {
+  font-size: 24px;
+  margin: 0 0 4px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.food-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.food-desc {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 /* RESPONSIVE */
 
-@media (max-width: 1024px) {
-  .hero-text h1 {
-    font-size: 60px;
-  }
-
-  .section-title {
-    font-size: 34px;
-  }
-
-  .crew-grid-top {
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-  }
-}
-
 @media (max-width: 768px) {
-  header {
-    height: 64px;
-    padding: 0 14px;
+  .food-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .logo {
-    font-size: 22px;
-  }
-
-  nav a {
-    font-size: 13px;
-    margin-left: 14px;
-  }
-
-  .page-section {
-    padding: 90px 16px 100px;
-  }
-
-  .hero-text h1 {
-    font-size: 40px;
-  }
-
-  .hero-text p {
-    font-size: 16px;
-  }
-
-  .crew-grid-top {
-    grid-template-columns: minmax(260px, 1fr);
-  }
-
-  .crew-grid-bottom {
-    margin-top: 26px;
+  .food-item img {
+    width: 100%;
+    height: auto;
   }
 }
-
