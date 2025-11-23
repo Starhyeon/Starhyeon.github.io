@@ -24,7 +24,7 @@ header {
   left: 0;
   right: 0;
   height: 72px;
-  background: rgba(7, 17, 26, 0.9);
+  background: rgba(7,17,26,0.9);
   z-index: 120;
   display: flex;
   align-items: center;
@@ -43,7 +43,7 @@ header {
   color: var(--accent);
   font-weight: 900;
   letter-spacing: 3px;
-  font-size: 36px; /* top-left logo size */
+  font-size: 36px;
 }
 nav a {
   color: #fff;
@@ -59,17 +59,15 @@ nav a:hover { color: var(--accent); }
 .page-section {
   display: none;
   min-height: 100vh;
-  padding: 100px 20px 160px; /* top for header, bottom for footer */
+  padding: 100px 20px 160px;
   position: relative;
-  background-size: cover;
-  background-position: center;
 }
 .page-section.active { display: block; }
 
-/* HERO SECTION */
+/* HERO Section */
 #hero {
   position: relative;
-  min-height: 100vh; /* FULL viewport initially */
+  min-height: 100vh;
   overflow: hidden;
 }
 .slides {
@@ -94,7 +92,7 @@ nav a:hover { color: var(--accent); }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.4);
   z-index: 1;
 }
 .hero-text {
@@ -104,51 +102,111 @@ nav a:hover { color: var(--accent); }
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding: 0 12px;
   width: 100%;
   max-width: 1100px;
 }
 .hero-text h1 {
   margin: 0;
   color: var(--accent);
-  font-weight: 900;
   font-size: 80px;
-  line-height: 0.95;
+  font-weight: 900;
   letter-spacing: 2px;
-  text-shadow: 0 0 14px rgba(214,180,106,0.32), 0 0 4px rgba(214,180,106,0.18);
-  text-transform: uppercase;
+  text-shadow: 0 0 14px rgba(214,180,106,0.32),
+               0 0 4px rgba(214,180,106,0.18);
 }
 .hero-text p {
-  margin: 12px 0 0;
+  margin-top: 12px;
   font-size: 24px;
   color: rgba(255,255,255,0.95);
 }
 
-/* Section Headings */
+/* SECTION TITLES */
 .page-section h2 {
   font-size: 42px;
-  margin: 0 0 18px;
   text-align: center;
   color: var(--accent);
+  margin-bottom: 40px;
   font-weight: 700;
 }
 
-/* Generic Grid & Cards (for Drinks / Employees) */
+/* ========================= */
+/*      TEAM SECTION         */
+/* ========================= */
+
+#team {
+  padding-top: 120px;
+  padding-bottom: 150px;
+}
+
+.team-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.team-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  justify-items: center;
+}
+
+.team-card {
+  background: var(--card);
+  padding: 20px;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 14px;
+  text-align: center;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.35);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.team-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.team-card h3 {
+  font-size: 20px;
+  margin: 6px 0;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.team-card .muted {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* GRID & CARDS (General use in other sections) */
 .grid {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
+
 .card {
   background: var(--card);
   padding: 16px;
   border-radius: 12px;
   text-align: center;
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  transition: transform .28s ease, box-shadow .28s ease;
 }
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
 }
 .avatar {
   width: 100%;
@@ -157,10 +215,9 @@ nav a:hover { color: var(--accent); }
   border-radius: 10px;
 }
 
-/* Muted text */
 .muted { color: var(--muted); }
 
-/* Mission text */
+/* Mission Section */
 .mission-text {
   max-width: 900px;
   margin: 0 auto;
@@ -169,75 +226,12 @@ nav a:hover { color: var(--accent); }
   border-radius: 12px;
 }
 
-/* TEAM SECTION (new layout) */
-#team {
-  background: #050d14; /* slight variation to separate visually */
-}
-
-.team-subtitle {
-  text-align: center;
-  color: var(--muted);
-  margin: 6px auto 32px;
-  font-size: 15px;
-  max-width: 520px;
-}
-
-.team-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.team-card {
-  background: #0b1820;
-  border-radius: 14px;
-  padding: 18px 16px 20px;
-  text-align: center;
-  max-width: 240px;
-  flex: 0 1 240px;
-  border: 1px solid rgba(214,180,106,0.18);
-  box-shadow: 0 14px 24px rgba(0,0,0,0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.team-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 30px rgba(0,0,0,0.45);
-}
-
-.team-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 999px;
-  margin: 0 auto 12px;
-  background: radial-gradient(circle at 30% 20%, #273642, #050b10);
-  overflow: hidden;
-}
-
-.team-name {
-  font-size: 18px;
-  margin: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.team-role {
-  margin-top: 4px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
 /* Footer */
 footer {
   background: #031018;
   color: var(--muted);
   padding: 60px 20px;
   text-align: center;
-  position: relative;
-  z-index: 10;
 }
 
 /* Responsive */
@@ -250,23 +244,16 @@ footer {
 
 @media (max-width: 768px) {
   header { height: 64px; padding: 0 14px; }
-  .header-inner { padding: 0 8px; }
   .logo { font-size: 26px; }
-  nav a { font-size: 15px; margin-left: 16px; }
+  nav a { font-size: 15px; }
   .page-section { padding: 90px 14px 140px; }
   #hero { height: 100vh; }
-  .hero-text { top: 50%; transform: translate(-50%, -50%); }
-  .hero-text h1 { font-size: 42px; letter-spacing: 1px; }
+  .hero-text h1 { font-size: 42px; }
   .hero-text p { font-size: 15px; }
   .page-section h2 { font-size: 28px; }
-  .avatar { height: 120px; }
-  .grid { gap: 12px; }
 
-  .team-grid {
-    gap: 18px;
-  }
-  .team-card {
-    max-width: 260px;
-    flex: 0 1 260px;
+  .team-card img {
+    height: 200px;
   }
 }
+
