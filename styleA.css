@@ -170,7 +170,7 @@ nav a:hover::after {
 .hero-text p {
   margin: 0;
   font-size: 22px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255,255,255,0.9);
 }
 
 /* GENERIC SECTION TITLES + SUBTITLE */
@@ -225,6 +225,7 @@ nav a:hover::after {
   text-align: center;
 }
 
+/* 👉 EDIT #1 — bigger card layout */
 .crew-grid {
   display: grid;
   grid-auto-rows: 1fr;
@@ -233,24 +234,26 @@ nav a:hover::after {
 }
 
 .crew-grid-top {
-  grid-template-columns: repeat(3, minmax(230px, 1fr));
+  grid-template-columns: repeat(3, minmax(260px, 1fr)); /* WAS 230px */
   justify-content: center;
-  max-width: 900px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* bottom (manager) */
 .crew-grid-bottom {
-  grid-template-columns: minmax(260px, 340px);
+  grid-template-columns: minmax(300px, 380px); /* WAS 260–340px */
   justify-content: center;
-  max-width: 360px;
+  max-width: 420px;
   margin: 34px auto 0;
 }
 
+/* 👉 EDIT #2 — card padding slightly bigger */
 .crew-card {
   background: radial-gradient(circle at top left, #182836 0, #0a151f 55%, #060d14 100%);
   border-radius: 16px;
-  padding: 24px 22px 22px;
+  padding: 28px 26px 24px; /* WAS 24px 22px 22px */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
   position: relative;
   overflow: hidden;
@@ -271,10 +274,11 @@ nav a:hover::after {
   box-shadow: 0 26px 55px rgba(0, 0, 0, 0.7);
 }
 
+/* 👉 EDIT #3 — bigger photo */
 .crew-photo {
-  height: 130px;
+  height: 160px; /* WAS 130px */
   border-radius: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   background:
     radial-gradient(circle at 0 0, rgba(214, 180, 106, 0.22), transparent 55%),
     radial-gradient(circle at 100% 100%, rgba(214, 180, 106, 0.12), transparent 50%),
@@ -383,7 +387,7 @@ footer {
   }
 
   .crew-grid-top {
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
   }
 }
 
@@ -415,7 +419,7 @@ footer {
   }
 
   .crew-grid-top {
-    grid-template-columns: minmax(220px, 1fr);
+    grid-template-columns: minmax(260px, 1fr);
   }
 
   .crew-grid-bottom {
