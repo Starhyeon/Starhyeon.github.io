@@ -1,4 +1,4 @@
-// HERO SLIDESHOW (supports any number of images)
+// --- HERO SLIDESHOW ---
 const slides = Array.from(document.querySelectorAll('#slides img'));
 let idx = 0;
 
@@ -14,19 +14,19 @@ function showSlide(i) {
   });
 }
 
-// Show first slide immediately
-if (slides.length > 0) {
+// show first slide immediately
+if (slides.length) {
   showSlide(0);
 }
 
-// Change slide every 8 seconds
+// change slide every 8 seconds
 setInterval(() => {
   if (!slides.length) return;
   idx = (idx + 1) % slides.length;
   showSlide(idx);
 }, 8000);
 
-// NAVIGATION BETWEEN SECTIONS
+// --- NAVIGATION BETWEEN SECTIONS ---
 const navLinks = document.querySelectorAll('nav a');
 const sections = document.querySelectorAll('.page-section');
 
@@ -35,16 +35,14 @@ navLinks.forEach(link => {
     e.preventDefault();
     const target = link.getAttribute('data-section');
     if (!target) return;
+    const targetEl = document.getElementById(target);
+    if (!targetEl) return;
 
-    const section = document.getElementById(target);
-    if (!section) return;
-
+    // toggle visibility
     sections.forEach(sec => sec.classList.remove('active'));
-    section.classList.add('active');
+    targetEl.classList.add('active');
 
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
