@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <!-- HEADER -->
   <header>
     <div class="header-inner">
       <div class="logo">SUSHI HOUSE</div>
@@ -22,15 +21,13 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section id="hero" class="page-section active" aria-label="hero">
+  <section id="hero" class="page-section active">
     <div class="slides" id="slides">
       <img src="./images/istock-new.jpg" alt="Sushi selection" />
-      <img src="./images/image-new.jpg" alt="Restaurant dining table" />
-      <img src="./images/void-new.jpg" alt="Sushi ambience" />
+      <img src="./images/image-new.jpg" alt="Restaurant table spread" />
+      <img src="./images/void-new.jpg" alt="Restaurant ambience" />
     </div>
-
     <div class="hero-overlay"></div>
-
     <div class="hero-text">
       <h1>SUSHI HOUSE</h1>
       <p>Tradition meets taste.</p>
@@ -38,68 +35,57 @@
   </section>
 
   <!-- TEAM SECTION -->
-  <section id="team" class="page-section" aria-label="team">
-    <h2>Meet the Crew</h2>
+  <section id="team" class="page-section">
+    <h2 class="team-title">Meet the Crew</h2>
+    <div class="team-subtitle">Our chefs and floor team craft every detail with precision and warmth.</div>
 
-    <div class="team-wrapper">
-      <p class="team-desc">
-        Our kitchen and floor teams uphold the spirit of Japanese hospitality,
-        crafting every detail with precision, calmness, and pride.
-      </p>
+    <div class="team-divider"></div>
 
-      <!-- Top row: 3 roles -->
-      <div class="team-row">
-        <article class="team-card">
-          <div class="team-avatar"></div>
-          <h3 class="team-name">Head Chef</h3>
-          <p class="team-role">Edomae-style sushi specialist</p>
-        </article>
-
-        <article class="team-card">
-          <div class="team-avatar"></div>
-          <h3 class="team-name">Sous Chef</h3>
-          <p class="team-role">Seasonal menu development</p>
-        </article>
-
-        <article class="team-card">
-          <div class="team-avatar"></div>
-          <h3 class="team-name">Floor Manager</h3>
-          <p class="team-role">Hospitality & events</p>
-        </article>
+    <div class="team-grid">
+      <!-- Card 1 -->
+      <div class="team-card">
+        <div class="team-img"></div>
+        <h3>Head Chef</h3>
+        <p class="role">Edomae-style sushi specialist</p>
       </div>
 
-      <!-- Bottom row: Manager centered -->
-      <div class="team-row manager-row">
-        <article class="team-card">
-          <div class="team-avatar"></div>
-          <h3 class="team-name">Restaurant Manager</h3>
-          <p class="team-role">Operations & guest experience</p>
-        </article>
+      <!-- Card 2 -->
+      <div class="team-card">
+        <div class="team-img"></div>
+        <h3>Sous Chef</h3>
+        <p class="role">Seasonal menu development</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="team-card">
+        <div class="team-img"></div>
+        <h3>Floor Manager</h3>
+        <p class="role">Hospitality & events</p>
+      </div>
+    </div>
+
+    <!-- Manager centered -->
+    <div class="team-grid-center">
+      <div class="team-card">
+        <div class="team-img"></div>
+        <h3>Restaurant Manager</h3>
+        <p class="role">Operations & guest experience</p>
       </div>
     </div>
   </section>
 
   <!-- DRINKS SECTION -->
-  <section id="drinks" class="page-section" aria-label="drinks">
+  <section id="drinks" class="page-section">
     <h2>Drinks</h2>
     <div class="grid">
-      <div class="card">
-        <h4>Junmai Sake</h4>
-        <div class="muted">Warm or chilled.</div>
-      </div>
-      <div class="card">
-        <h4>Japanese Whisky</h4>
-        <div class="muted">Single malts & blends.</div>
-      </div>
-      <div class="card">
-        <h4>Non-alcoholic</h4>
-        <div class="muted">House teas & sodas.</div>
-      </div>
+      <div class="card"><h4>Junmai Sake</h4><div class="muted">Warm or chilled.</div></div>
+      <div class="card"><h4>Japanese Whisky</h4><div class="muted">Single malts & blends.</div></div>
+      <div class="card"><h4>Non-alcoholic</h4><div class="muted">House teas & sodas.</div></div>
     </div>
   </section>
 
   <!-- EMPLOYEES SECTION -->
-  <section id="employees" class="page-section" aria-label="employees">
+  <section id="employees" class="page-section">
     <h2>Our Team Members</h2>
     <div class="grid">
       <div class="card">
@@ -116,11 +102,9 @@
   </section>
 
   <!-- MISSION SECTION -->
-  <section id="mission" class="page-section" aria-label="mission">
+  <section id="mission" class="page-section">
     <h2>Mission</h2>
-    <p class="mission-text">
-      To present sushi that respects tradition while embracing local, seasonal ingredients.
-    </p>
+    <p class="mission-text">To present sushi that respects tradition while embracing local, seasonal ingredients.</p>
   </section>
 
   <!-- FOOTER -->
