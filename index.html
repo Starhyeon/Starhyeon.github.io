@@ -4,10 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sushi House</title>
-  <link rel="stylesheet" href="./style2.css" />
+
+  <!-- NOTE: using styleA.css so GitHub + browser are forced to load new CSS -->
+  <link rel="stylesheet" href="./styleA.css" />
 </head>
 <body>
-
   <header>
     <div class="header-inner">
       <div class="logo">SUSHI HOUSE</div>
@@ -22,104 +23,139 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section id="hero" class="page-section active">
-    <div class="slides" id="slides">
+  <section id="hero" class="page-section active" aria-label="hero">
+    <div class="slides" id="slides" aria-hidden="false">
+      <!-- You already have these images in ./images; keep or replace as you want -->
       <img src="./images/istock-new.jpg" alt="Sushi selection" />
       <img src="./images/image-new.jpg" alt="Restaurant table spread" />
-      <img src="./images/void-new.jpg" alt="Ambience" />
+      <img src="./images/void-new.jpg" alt="Restaurant ambience" />
     </div>
 
-    <div class="hero-overlay"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
 
-    <div class="hero-text">
+    <div class="hero-text" role="banner">
       <h1>SUSHI HOUSE</h1>
       <p>Tradition meets taste.</p>
     </div>
   </section>
 
-  <!-- TEAM SECTION (FINAL + PERFECT + SLIGHTLY BIGGER) -->
-  <section id="team" class="page-section">
-    <h2 class="team-title">Meet the Crew</h2>
-    <p class="team-desc">
-      Our kitchen and floor teams uphold the spirit of Japanese hospitality,<br>
-      crafting every detail with precision and warmth.
-    </p>
+  <!-- TEAM SECTION (Meet the Crew) -->
+  <section id="team" class="page-section" aria-label="team">
+    <div class="section-inner">
+      <h2 class="section-title">Meet the Crew</h2>
+      <p class="section-subtitle">
+        Our kitchen and floor teams uphold the spirit of Japanese hospitality, crafting every detail
+        with precision, calmness, and warmth.
+      </p>
 
-    <div class="team-deco">
-      <span></span><span></span><span></span>
+      <div class="section-divider">
+        <span></span><span></span><span></span>
+      </div>
+
+      <!-- Top row: 3 cards -->
+      <div class="crew-grid crew-grid-top">
+        <article class="crew-card">
+          <div class="crew-photo"></div>
+          <h3 class="crew-name">Head Chef</h3>
+          <p class="crew-role">Edomae-style sushi specialist</p>
+        </article>
+
+        <article class="crew-card">
+          <div class="crew-photo"></div>
+          <h3 class="crew-name">Sous Chef</h3>
+          <p class="crew-role">Seasonal menu development</p>
+        </article>
+
+        <article class="crew-card">
+          <div class="crew-photo"></div>
+          <h3 class="crew-name">Floor Manager</h3>
+          <p class="crew-role">Hospitality &amp; events</p>
+        </article>
+      </div>
+
+      <!-- Bottom row: 1 centered card -->
+      <div class="crew-grid crew-grid-bottom">
+        <article class="crew-card">
+          <div class="crew-photo"></div>
+          <h3 class="crew-name">Restaurant Manager</h3>
+          <p class="crew-role">Operations &amp; guest experience</p>
+        </article>
+      </div>
     </div>
-
-    <div class="team-grid">
-
-      <div class="team-card">
-        <div class="team-img"></div>
-        <h3>Head Chef</h3>
-        <p class="muted">Edomae-style sushi specialist</p>
-      </div>
-
-      <div class="team-card">
-        <div class="team-img"></div>
-        <h3>Sous Chef</h3>
-        <p class="muted">Seasonal menu development</p>
-      </div>
-
-      <div class="team-card">
-        <div class="team-img"></div>
-        <h3>Floor Manager</h3>
-        <p class="muted">Hospitality & events</p>
-      </div>
-
-    </div>
-
-    <div class="team-grid bottom">
-      <div class="team-card">
-        <div class="team-img"></div>
-        <h3>Restaurant Manager</h3>
-        <p class="muted">Operations & guest experience</p>
-      </div>
-    </div>
-
   </section>
 
   <!-- DRINKS SECTION -->
-  <section id="drinks" class="page-section">
-    <h2>Drinks</h2>
-    <div class="grid">
-      <div class="card"><h4>Junmai Sake</h4><div class="muted">Warm or chilled.</div></div>
-      <div class="card"><h4>Japanese Whisky</h4><div class="muted">Single malts & blends.</div></div>
-      <div class="card"><h4>Non-alcoholic</h4><div class="muted">House teas & sodas.</div></div>
+  <section id="drinks" class="page-section" aria-label="drinks">
+    <div class="section-inner">
+      <h2 class="section-title">Drinks</h2>
+      <p class="section-subtitle">Pair each bite with something crafted just as carefully.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Junmai Sake</h3>
+          <p class="muted">Served warm or chilled.</p>
+        </div>
+        <div class="card">
+          <h3>Japanese Whisky</h3>
+          <p class="muted">Single malts &amp; blends.</p>
+        </div>
+        <div class="card">
+          <h3>Non-Alcoholic</h3>
+          <p class="muted">House teas &amp; sparkling sodas.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- EMPLOYEES SECTION -->
-  <section id="employees" class="page-section">
-    <h2>Our Team Members</h2>
-    <div class="grid">
-      <div class="card">
-        <img class="avatar" src="./images/sushi1.jpg" alt="Employee 1" />
-        <h3>Employee 1</h3>
-        <div class="muted">Front of House</div>
-      </div>
-      <div class="card">
-        <img class="avatar" src="./images/sushi2.jpg" alt="Employee 2" />
-        <h3>Employee 2</h3>
-        <div class="muted">Kitchen Assistant</div>
+  <section id="employees" class="page-section" aria-label="employees">
+    <div class="section-inner">
+      <h2 class="section-title">Team Members</h2>
+      <p class="section-subtitle">Faces you’ll see crafting and delivering every plate.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="avatar-placeholder"></div>
+          <h3>Front of House</h3>
+          <p class="muted">Reservations &amp; service.</p>
+        </div>
+
+        <div class="card">
+          <div class="avatar-placeholder"></div>
+          <h3>Kitchen Team</h3>
+          <p class="muted">Prep, grill, and sushi bar.</p>
+        </div>
+
+        <div class="card">
+          <div class="avatar-placeholder"></div>
+          <h3>Bar &amp; Drinks</h3>
+          <p class="muted">Cocktails, sake, and tea.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- MISSION SECTION -->
-  <section id="mission" class="page-section">
-    <h2>Mission</h2>
-    <p class="mission-text">To present sushi that respects tradition while embracing local, seasonal ingredients.</p>
+  <section id="mission" class="page-section" aria-label="mission">
+    <div class="section-inner">
+      <h2 class="section-title">Our Mission</h2>
+      <p class="mission-text">
+        To present sushi that respects tradition while embracing seasonal ingredients and the
+        relaxed warmth of a Tokyo backstreet bar. Every detail — from rice, to cut, to pace of
+        service — is designed to make guests feel quietly taken care of.
+      </p>
+    </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>📍 45 Great Queen Street, Covent Garden</p>
     <p>📞 020-1234-5678 · ✉ reservations@example.com</p>
   </footer>
 
-  <script src="./script.js"></script>
+  <!-- NOTE: using scriptA.js so GitHub + browser are forced to load new JS -->
+  <script src="./scriptA.js" defer></script>
 </body>
 </html>
+
 
