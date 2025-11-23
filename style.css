@@ -6,112 +6,65 @@
   --site-width: 1200px;
 }
 
-/* ========== BASE ========== */
-
-* {
-  box-sizing: border-box;
-}
-
-html,
+/* Base */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-body {
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: Inter, system-ui, sans-serif;
   background: var(--bg);
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
+  color: white;
 }
 
-/* ========== HEADER / NAV ========== */
-
+/* Header */
 header {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 72px;
-  background: rgba(7, 17, 26, 0.9);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  z-index: 120;
-}
-
-.header-inner {
   width: 100%;
-  max-width: var(--site-width);
-  margin: 0 auto;
-  padding: 0 18px;
+  height: 72px;
+  background: rgba(7,17,26,0.9);
   display: flex;
   align-items: center;
+  z-index: 50;
+  backdrop-filter: blur(4px);
+  padding: 0 20px;
+}
+.header-inner {
+  max-width: var(--site-width);
+  width: 100%;
+  margin: auto;
+  display: flex;
   justify-content: space-between;
 }
 
 .logo {
   color: var(--accent);
   font-weight: 900;
-  font-size: 32px;
   letter-spacing: 3px;
+  font-size: 32px;
 }
 
 nav a {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
-  margin-left: 24px;
+  margin-left: 22px;
   font-weight: 600;
-  font-size: 15px;
   cursor: pointer;
 }
 
-nav a:hover {
-  color: var(--accent);
-}
-
-/* ========== SECTIONS GENERAL ========== */
-
+/* Page Sec */
 .page-section {
   display: none;
   min-height: 100vh;
-  padding: 120px 20px 80px;
+  padding: 100px 20px 160px;
 }
+.page-section.active { display: block; }
 
-.page-section.active {
-  display: block;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 36px;
-  color: var(--accent);
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.section-subtitle {
-  text-align: center;
-  color: var(--muted);
-  font-size: 15px;
-  margin-bottom: 32px;
-}
-
-/* ========== HERO ========== */
-
+/* HERO */
 #hero {
   position: relative;
   min-height: 100vh;
-  padding: 0;
   overflow: hidden;
 }
-
-.slides {
-  position: absolute;
-  inset: 0;
-}
-
 .slides img {
   position: absolute;
   inset: 0;
@@ -119,267 +72,104 @@ nav a:hover {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1s ease, transform 10s linear;
-  transform: scale(1.02);
+  transition: opacity 1s ease;
 }
-
-.slides img.visible {
-  opacity: 1;
-  transform: scale(1.06);
-}
-
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.42);
-  z-index: 1;
+  background: rgba(0,0,0,0.35);
 }
-
 .hero-text {
   position: absolute;
-  z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding: 0 16px;
+  z-index: 2;
 }
-
 .hero-text h1 {
   font-size: 80px;
-  margin: 0;
   color: var(--accent);
-  letter-spacing: 3px;
   font-weight: 900;
 }
+.hero-text p { font-size: 24px; }
 
-.hero-text p {
-  margin-top: 12px;
-  font-size: 22px;
-  color: rgba(255, 255, 255, 0.96);
-}
-
-/* ========== TEAM SECTION ========== */
-
-#team {
-  max-width: 1300px;
-  margin: 0 auto;
-  text-align: center;
-}
-
+/* TEAM SECTION */
 .team-title {
+  text-align: center;
   font-size: 46px;
   color: var(--accent);
+  margin-top: 40px;
   font-weight: 800;
-  margin-bottom: 10px;
 }
 
-.team-subtitle {
+.team-desc {
+  text-align: center;
   color: var(--muted);
+  margin-top: 10px;
   font-size: 15px;
-  max-width: 680px;
-  margin: 0 auto 32px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-/* gold bar with three segments */
-.team-divider {
+.team-deco {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  gap: 12px;
 }
-
-.team-divider span {
-  display: block;
-  height: 3px;
-  background: var(--accent);
-  border-radius: 999px;
-}
-
-.team-divider span:nth-child(1),
-.team-divider span:nth-child(3) {
-  width: 70px;
-}
-
-.team-divider span:nth-child(2) {
+.team-deco span {
   width: 40px;
+  height: 2px;
+  background: var(--accent);
+  display: block;
 }
 
-/* rows */
-
-.team-row {
+.team-grid {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 50px;
-  margin-bottom: 50px;
+  gap: 60px;
+  margin-top: 60px;
 }
-
-.bottom-row {
-  margin-top: -10px;
+.team-grid.bottom {
+  margin-top: 80px;
 }
-
-/* cards */
 
 .team-card {
-  width: 300px; /* slightly bigger than before */
   background: var(--card);
-  padding: 22px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(214, 180, 106, 0.22);
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  border-radius: 14px;
+  padding: 28px;
+  width: 310px;      /* ⬅ 12% bigger */
+  height: 240px;     /* ⬅ 12% bigger */
+  text-align: center;
+  border: 1px solid rgba(214,180,106,0.25);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
 
-.team-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-}
-
-.team-photo {
+.team-img {
   width: 100%;
-  height: 190px; /* larger image area */
-  background: radial-gradient(circle at 20% 0%, #1a2731 0%, #050b10 70%);
-  border-radius: 12px;
-  margin-bottom: 16px;
-}
-
-/* restaurant manager card centered */
-.manager-card {
-  width: 320px;
+  height: 120px;     /* bigger image area */
+  background: #15222d;
+  border-radius: 10px;
+  margin-bottom: 14px;
 }
 
 .team-card h3 {
-  margin: 4px 0 2px;
   color: var(--accent);
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.small-muted {
-  color: var(--muted);
-  font-size: 13px;
+  font-size: 18px;
   margin: 0;
-}
-
-/* ========== DRINKS & EMPLOYEES GRIDS ========== */
-
-.grid {
-  width: 100%;
-  max-width: var(--site-width);
-  margin: 0 auto;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-.card {
-  background: var(--card);
-  padding: 18px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-.card h4 {
-  margin: 0 0 6px;
-  color: var(--accent);
-}
-
-.avatar {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 8px;
 }
 
 .muted {
   color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
 }
 
-/* ========== MISSION ========== */
-
-.mission-text {
-  max-width: 900px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 22px 20px;
-  border-radius: 14px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-/* ========== FOOTER ========== */
-
+/* Footer */
 footer {
   text-align: center;
-  padding: 40px 20px 50px;
+  padding: 60px 20px;
   background: #031018;
   color: var(--muted);
-  font-size: 14px;
 }
-
-/* ========== RESPONSIVE ========== */
-
-@media (max-width: 1024px) {
-  .hero-text h1 {
-    font-size: 60px;
-  }
-
-  .hero-text p {
-    font-size: 18px;
-  }
-
-  .team-row {
-    gap: 32px;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    height: 64px;
-  }
-
-  .header-inner {
-    padding: 0 10px;
-  }
-
-  .logo {
-    font-size: 24px;
-  }
-
-  nav a {
-    margin-left: 12px;
-    font-size: 13px;
-  }
-
-  .page-section {
-    padding: 90px 14px 60px;
-  }
-
-  .hero-text h1 {
-    font-size: 42px;
-  }
-
-  .hero-text p {
-    font-size: 16px;
-  }
-
-  .team-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 26px;
-  }
-
-  .team-card,
-  .manager-card {
-    width: 88%;
-    max-width: 340px;
-  }
-}
-
 
