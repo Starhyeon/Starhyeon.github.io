@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sushi House</title>
-
-  <!-- NOTE: using styleA.css so GitHub + browser are forced to load new CSS -->
-  <link rel="stylesheet" href="./styleA.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header>
     <div class="header-inner">
       <div class="logo">SUSHI HOUSE</div>
@@ -22,130 +23,142 @@
     </div>
   </header>
 
+
   <!-- HERO SECTION -->
   <section id="hero" class="page-section active" aria-label="hero">
-    <div class="slides" id="slides" aria-hidden="false">
-      <!-- You already have these images in ./images; keep or replace as you want -->
-      <img src="./images/istock-new.jpg" alt="Sushi selection" />
-      <img src="./images/image-new.jpg" alt="Restaurant table spread" />
-      <img src="./images/void-new.jpg" alt="Restaurant ambience" />
+    <div class="slides" id="slides">
+      <img src="./images/istock-new.jpg" alt="Sushi" />
+      <img src="./images/image-new.jpg" alt="Food" />
+      <img src="./images/void-new.jpg" alt="Ambience" />
     </div>
 
-    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-overlay"></div>
 
-    <div class="hero-text" role="banner">
+    <div class="hero-text">
       <h1>SUSHI HOUSE</h1>
       <p>Tradition meets taste.</p>
     </div>
   </section>
 
-  <!-- TEAM SECTION (Meet the Crew) -->
+
+  <!-- TEAM SECTION -->
   <section id="team" class="page-section" aria-label="team">
     <div class="section-inner">
+
       <h2 class="section-title">Meet the Crew</h2>
       <p class="section-subtitle">
-        Our kitchen and floor teams uphold the spirit of Japanese hospitality, crafting every detail
-        with precision, calmness, and warmth.
+        The artisans who bring mastery and hospitality to every plate.
       </p>
 
       <div class="section-divider">
         <span></span><span></span><span></span>
       </div>
 
-      <!-- Top row: 3 cards -->
+      <!-- TOP ROW (3 CARDS) -->
       <div class="crew-grid crew-grid-top">
-        <article class="crew-card">
+
+        <div class="crew-card">
           <div class="crew-photo"></div>
           <h3 class="crew-name">Head Chef</h3>
-          <p class="crew-role">Edomae-style sushi specialist</p>
-        </article>
+          <p class="crew-role">Expert in Edomae-style sushi</p>
+        </div>
 
-        <article class="crew-card">
+        <div class="crew-card">
           <div class="crew-photo"></div>
           <h3 class="crew-name">Sous Chef</h3>
           <p class="crew-role">Seasonal menu development</p>
-        </article>
+        </div>
 
-        <article class="crew-card">
+        <div class="crew-card">
           <div class="crew-photo"></div>
           <h3 class="crew-name">Floor Manager</h3>
-          <p class="crew-role">Hospitality &amp; events</p>
-        </article>
+          <p class="crew-role">Hospitality & events</p>
+        </div>
+
       </div>
 
-      <!-- Bottom row: 1 centered card -->
+      <!-- BOTTOM CENTER CARD -->
       <div class="crew-grid crew-grid-bottom">
-        <article class="crew-card">
+
+        <div class="crew-card">
           <div class="crew-photo"></div>
-          <h3 class="crew-name">Restaurant Manager</h3>
-          <p class="crew-role">Operations &amp; guest experience</p>
-        </article>
+          <h3 class="crew-name">General Manager</h3>
+          <p class="crew-role">Operations & Guest Experience</p>
+        </div>
+
       </div>
+
     </div>
   </section>
+
 
   <!-- DRINKS SECTION -->
   <section id="drinks" class="page-section" aria-label="drinks">
     <div class="section-inner">
+
       <h2 class="section-title">Drinks</h2>
-      <p class="section-subtitle">Pair each bite with something crafted just as carefully.</p>
 
       <div class="grid">
         <div class="card">
+          <div class="avatar-placeholder"></div>
           <h3>Junmai Sake</h3>
-          <p class="muted">Served warm or chilled.</p>
+          <p class="muted">Warm or chilled.</p>
         </div>
+
         <div class="card">
+          <div class="avatar-placeholder"></div>
           <h3>Japanese Whisky</h3>
-          <p class="muted">Single malts &amp; blends.</p>
+          <p class="muted">Single malts & blends.</p>
         </div>
+
         <div class="card">
-          <h3>Non-Alcoholic</h3>
-          <p class="muted">House teas &amp; sparkling sodas.</p>
+          <div class="avatar-placeholder"></div>
+          <h3>Non-alcoholic</h3>
+          <p class="muted">Teas & house sodas.</p>
         </div>
       </div>
+
     </div>
   </section>
+
 
   <!-- EMPLOYEES SECTION -->
   <section id="employees" class="page-section" aria-label="employees">
     <div class="section-inner">
-      <h2 class="section-title">Team Members</h2>
-      <p class="section-subtitle">Faces you’ll see crafting and delivering every plate.</p>
+
+      <h2 class="section-title">Our Team Members</h2>
 
       <div class="grid">
         <div class="card">
           <div class="avatar-placeholder"></div>
-          <h3>Front of House</h3>
-          <p class="muted">Reservations &amp; service.</p>
+          <h3>Employee 1</h3>
+          <p class="muted">Front of House</p>
         </div>
 
         <div class="card">
           <div class="avatar-placeholder"></div>
-          <h3>Kitchen Team</h3>
-          <p class="muted">Prep, grill, and sushi bar.</p>
-        </div>
-
-        <div class="card">
-          <div class="avatar-placeholder"></div>
-          <h3>Bar &amp; Drinks</h3>
-          <p class="muted">Cocktails, sake, and tea.</p>
+          <h3>Employee 2</h3>
+          <p class="muted">Kitchen Assistant</p>
         </div>
       </div>
+
     </div>
   </section>
+
 
   <!-- MISSION SECTION -->
   <section id="mission" class="page-section" aria-label="mission">
     <div class="section-inner">
-      <h2 class="section-title">Our Mission</h2>
+
+      <h2 class="section-title">Mission</h2>
+
       <p class="mission-text">
-        To present sushi that respects tradition while embracing seasonal ingredients and the
-        relaxed warmth of a Tokyo backstreet bar. Every detail — from rice, to cut, to pace of
-        service — is designed to make guests feel quietly taken care of.
+        To present sushi that respects tradition while embracing local, seasonal ingredients.
       </p>
+
     </div>
   </section>
+
 
   <!-- FOOTER -->
   <footer>
@@ -153,8 +166,10 @@
     <p>📞 020-1234-5678 · ✉ reservations@example.com</p>
   </footer>
 
-  <!-- NOTE: using scriptA.js so GitHub + browser are forced to load new JS -->
-  <script src="./scriptA.js" defer></script>
+
+  <!-- SCRIPT -->
+  <script src="./script.js"></script>
+
 </body>
 </html>
 
