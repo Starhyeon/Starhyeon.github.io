@@ -139,7 +139,11 @@ nav a:hover::after {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35));
+  background: radial-gradient(
+      circle at top,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.35)
+  );
   z-index: 1;
 }
 
@@ -166,7 +170,7 @@ nav a:hover::after {
 .hero-text p {
   margin: 0;
   font-size: 22px;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* GENERIC SECTION TITLES + SUBTITLE */
@@ -211,7 +215,7 @@ nav a:hover::after {
   width: 70px;
 }
 
-/* TEAM / CREW */
+/* TEAM / CREW LAYOUT */
 
 #team {
   background: radial-gradient(circle at top, #091624 0, #050c14 55%, #04070b 100%);
@@ -236,6 +240,7 @@ nav a:hover::after {
   margin-right: auto;
 }
 
+/* bottom (manager) */
 .crew-grid-bottom {
   grid-template-columns: minmax(300px, 380px);
   justify-content: center;
@@ -278,6 +283,8 @@ nav a:hover::after {
   border: 1px solid rgba(214, 180, 106, 0.18);
 }
 
+/* text inside crew cards */
+
 .crew-name {
   margin: 0 0 4px;
   font-size: 16px;
@@ -291,7 +298,144 @@ nav a:hover::after {
   color: var(--muted);
 }
 
-/* GENERIC GRID (DRINKS + EMPLOYEES) */
+/* MENU / DRINKS GRID (FOOD + DRINKS) */
+
+#food {
+  background: radial-gradient(circle at top, #081624 0, #050b13 55%, #03070c 100%);
+}
+
+#drinks {
+  background: radial-gradient(circle at top, #071420 0, #050b13 55%, #03070c 100%);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 26px;
+  margin-top: 40px;
+}
+
+.menu-card {
+  background: radial-gradient(circle at top left, #162434 0, #09121c 55%, #050b12 100%);
+  border-radius: 18px;
+  padding: 18px 18px 20px;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.55);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(214, 180, 106, 0.16);
+  pointer-events: none;
+}
+
+.menu-photo {
+  height: 160px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  background:
+    radial-gradient(circle at 0 0, rgba(214, 180, 106, 0.22), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(214, 180, 106, 0.16), transparent 55%),
+    linear-gradient(135deg, #151f2c 0, #050a11 60%, #020509 100%);
+  border: 1px solid rgba(214, 180, 106, 0.18);
+}
+
+.menu-content {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.menu-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.menu-price {
+  font-size: 13px;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.menu-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Specials subsection in Menu */
+
+.specials {
+  margin-top: 46px;
+}
+
+.specials-title {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: left;
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.special-card {
+  background: radial-gradient(circle at top left, #182534 0, #0a141f 60%, #050a10 100%);
+  border-radius: 16px;
+  padding: 18px 20px 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+  position: relative;
+}
+
+.special-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(214, 180, 106, 0.22);
+  pointer-events: none;
+}
+
+.special-name {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.special-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* DRINKS grid reuse .menu-grid; optional tweaks */
+.drinks-grid .menu-card {
+  min-height: 0; /* just to be safe */
+}
+
+/* GENERIC GRID + CARDS (legacy, still used nowhere but safe) */
 
 .grid {
   display: grid;
@@ -323,7 +467,7 @@ nav a:hover::after {
   color: #ffffff;
 }
 
-/* avatar placeholders (employees) */
+/* avatar placeholders (if you reuse later) */
 
 .avatar-placeholder {
   height: 120px;
@@ -333,6 +477,54 @@ nav a:hover::after {
     radial-gradient(circle at 0 0, rgba(214, 180, 106, 0.24), transparent 55%),
     linear-gradient(145deg, #141f2a, #050a10);
   border: 1px solid rgba(214, 180, 106, 0.18);
+}
+
+/* EVENTS SECTION */
+
+#events {
+  background: radial-gradient(circle at top, #071624 0, #040811 55%, #020509 100%);
+}
+
+.events-panel {
+  margin-top: 40px;
+  background: radial-gradient(circle at top left, #151f2b 0, #050b13 60%, #020509 100%);
+  border-radius: 18px;
+  padding: 28px 26px 26px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+.events-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(214, 180, 106, 0.22);
+  pointer-events: none;
+}
+
+.events-heading {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.events-text {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.events-note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: rgba(214, 180, 106, 0.9);
+}
+
+.events-note span {
+  font-weight: 600;
 }
 
 /* MISSION TEXT */
@@ -348,6 +540,13 @@ nav a:hover::after {
   border: 1px solid rgba(214, 180, 106, 0.14);
 }
 
+/* MUTED TEXT */
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
 /* FOOTER */
 
 footer {
@@ -358,71 +557,64 @@ footer {
   font-size: 13px;
 }
 
-/* ---------------------------------- */
-/*         FOOD MENU (NEW)            */
-/* ---------------------------------- */
-
-.food-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.food-item {
-  display: flex;
-  gap: 22px;
-  background: var(--card);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 18px 34px rgba(0,0,0,0.45);
-  border: 1px solid rgba(214,180,106,0.15);
-}
-
-.food-item img {
-  width: 200px;
-  height: 200px;
-  border-radius: 14px;
-  object-fit: cover;
-}
-
-.food-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.food-title {
-  font-size: 24px;
-  margin: 0 0 4px;
-  color: var(--accent);
-  font-weight: 800;
-}
-
-.food-price {
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.food-desc {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.5;
-}
-
 /* RESPONSIVE */
 
-@media (max-width: 768px) {
-  .food-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 60px;
   }
 
-  .food-item img {
-    width: 100%;
-    height: auto;
+  .section-title {
+    font-size: 34px;
+  }
+
+  .crew-grid-top {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+
+  .menu-grid,
+  .specials-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 64px;
+    padding: 0 14px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  nav a {
+    font-size: 13px;
+    margin-left: 14px;
+  }
+
+  .page-section {
+    padding: 90px 16px 100px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .crew-grid-top {
+    grid-template-columns: minmax(260px, 1fr);
+  }
+
+  .crew-grid-bottom {
+    margin-top: 26px;
+  }
+
+  .menu-grid,
+  .specials-grid {
+    grid-template-columns: minmax(240px, 1fr);
   }
 }
