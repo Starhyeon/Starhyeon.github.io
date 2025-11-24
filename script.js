@@ -1,4 +1,4 @@
-// --- HERO SLIDESHOW (opacity-based, robust) ---
+// --- HERO SLIDESHOW (opacity-based) ---
 
 const slides = Array.from(document.querySelectorAll("#slides img"));
 let slideIndex = 0;
@@ -15,7 +15,7 @@ function showSlide(i) {
   });
 }
 
-// show first slide immediately if there are any slides
+// show first slide immediately if there are any
 if (slides.length) {
   showSlide(0);
 
@@ -23,7 +23,7 @@ if (slides.length) {
     if (!slides.length) return;
     slideIndex = (slideIndex + 1) % slides.length;
     showSlide(slideIndex);
-  }, 6000); // 6 seconds per your request
+  }, 6000); // 6 seconds per slide
 }
 
 // --- NAVIGATION BETWEEN SECTIONS (no page reload) ---
@@ -43,7 +43,28 @@ navLinks.forEach((link) => {
     sections.forEach((sec) => sec.classList.remove("active"));
     targetSection.classList.add("active");
 
-    // always scroll to top smoothly when changing "pages"
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
+
+// --- HERO PARALLAX (very subtle, safe) ---
+
+const heroSection = document.getElementById("hero");
+const heroText = document.querySelector(".hero-text");
+
+if (heroSection && heroText) {
+  heroSection.addEventListener("mousemove", (e) => {
+    const rect = heroSection.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+    const translateX = x * 16; // adjust strength
+    const translateY = y * 10;
+
+    heroText.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+  });
+
+  heroSection.addEventListener("mouseleave", () => {
+    heroText.style.transform = "translate3d(0, 0, 0)";
+  });
+}
