@@ -515,3 +515,118 @@ footer {
     margin-top: 26px;
   }
 }
+/* =======================
+   MENU (MEDIUM CARDS)
+   ======================= */
+
+#menu {
+  background: radial-gradient(circle at top, #0b1724 0, #050c14 55%, #03070b 100%);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 26px;
+  margin-top: 40px;
+}
+
+.menu-card {
+  background: radial-gradient(circle at top left, #182836 0, #0a151f 55%, #060d14 100%);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 18px 38px rgba(0,0,0,0.55);
+  position: relative;
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+}
+
+.menu-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(214,180,106,0.15);
+}
+
+/* placeholder image area */
+.menu-photo {
+  height: 140px;
+  background:
+    radial-gradient(circle at 0 0, rgba(214,180,106,0.22), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(214,180,106,0.12), transparent 50%),
+    linear-gradient(135deg, #121f2b, #050a10);
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(214,180,106,0.18);
+}
+
+/* name + price */
+.menu-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: .4px;
+}
+
+.menu-price {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* specials */
+.specials-title {
+  margin-top: 48px;
+  text-align: center;
+  color: var(--accent);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px,1fr));
+  gap: 26px;
+  margin-top: 26px;
+}
+
+.special {
+  background: radial-gradient(circle at top left, #26394c 0, #0a131c 55%, #060c12 100%);
+}
+
+
+/* =======================
+   EVENTS SECTION
+   ======================= */
+
+#events {
+  background: radial-gradient(circle at top, #0b1622 0, #050c15 55%, #03060a 100%);
+}
+
+.events-box {
+  margin-top: 40px;
+  background: rgba(255,255,255,0.03);
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(214,180,106,0.18);
+  box-shadow: 0 18px 34px rgba(0,0,0,0.4);
+}
+
+.events-box h3 {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 22px;
+}
+
+.events-box p {
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 15px;
+}
