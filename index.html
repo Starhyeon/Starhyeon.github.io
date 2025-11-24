@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sushi House</title>
-  <!-- IMPORTANT: this must match your actual file name -->
   <link rel="stylesheet" href="./styleB.css" />
 </head>
 
@@ -17,14 +16,16 @@
       <nav>
         <a href="#" data-section="hero">Home</a>
         <a href="#" data-section="team">Our Team</a>
+        <a href="#" data-section="menu">Menu</a>
         <a href="#" data-section="drinks">Drinks</a>
-        <a href="#" data-section="employees">Employees</a>
+        <a href="#" data-section="events">Events</a>
         <a href="#" data-section="mission">Mission</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+
+  <!-- HERO -->
   <section id="hero" class="page-section active" aria-label="hero">
     <div class="slides" id="slides">
       <img src="./images/istock-new.jpg" alt="Sushi" />
@@ -40,118 +41,167 @@
     </div>
   </section>
 
-  <!-- TEAM SECTION -->
+
+  <!-- TEAM -->
   <section id="team" class="page-section" aria-label="team">
     <div class="section-inner">
-
       <h2 class="section-title">Meet the Crew</h2>
-      <p class="section-subtitle">
-        The artisans who bring mastery and hospitality to every plate.
-      </p>
+      <p class="section-subtitle">The artisans who bring mastery and hospitality to every plate.</p>
+      <div class="section-divider"><span></span><span></span><span></span></div>
 
-      <div class="section-divider">
-        <span></span><span></span><span></span>
-      </div>
-
-      <!-- TOP ROW (3 CARDS) -->
       <div class="crew-grid crew-grid-top">
+        <div class="crew-card"><div class="crew-photo"></div><h3 class="crew-name">Head Chef</h3><p class="crew-role">Expert in Edomae-style sushi</p></div>
+        <div class="crew-card"><div class="crew-photo"></div><h3 class="crew-name">Sous Chef</h3><p class="crew-role">Seasonal menu development</p></div>
+        <div class="crew-card"><div class="crew-photo"></div><h3 class="crew-name">Floor Manager</h3><p class="crew-role">Hospitality & events</p></div>
+      </div>
 
-        <div class="crew-card">
-          <div class="crew-photo"></div>
-          <h3 class="crew-name">Head Chef</h3>
-          <p class="crew-role">Expert in Edomae-style sushi</p>
+      <div class="crew-grid crew-grid-bottom">
+        <div class="crew-card"><div class="crew-photo"></div><h3 class="crew-name">General Manager</h3><p class="crew-role">Operations & Guest Experience</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MENU SECTION (NEW) -->
+  <section id="menu" class="page-section" aria-label="menu">
+    <div class="section-inner">
+
+      <h2 class="section-title">Menu</h2>
+      <p class="section-subtitle">A curated selection of our favorite dishes</p>
+      <div class="section-divider"><span></span><span></span><span></span></div>
+
+      <!-- 10 Medium Food Cards (2 × 2 Grid Scrolling Down) -->
+      <div class="menu-grid">
+
+        <div class="menu-card">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Spicy Tuna Roll</h3>
+          <p class="menu-price">$14</p>
         </div>
 
-        <div class="crew-card">
-          <div class="crew-photo"></div>
-          <h3 class="crew-name">Sous Chef</h3>
-          <p class="crew-role">Seasonal menu development</p>
+        <div class="menu-card">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Salmon Nigiri</h3>
+          <p class="menu-price">$12</p>
         </div>
 
-        <div class="crew-card">
-          <div class="crew-photo"></div>
-          <h3 class="crew-name">Floor Manager</h3>
-          <p class="crew-role">Hospitality &amp; events</p>
+        <div class="menu-card">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Yellowtail Sashimi</h3>
+          <p class="menu-price">$18</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Shrimp Tempura Roll</h3>
+          <p class="menu-price">$15</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Rainbow Roll</h3>
+          <p class="menu-price">$20</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Eel Cucumber Roll</h3>
+          <p class="menu-price">$16</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Avocado Maki</h3>
+          <p class="menu-price">$9</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Toro Sashimi</h3>
+          <p class="menu-price">$32</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Crunchy Roll</h3>
+          <p class="menu-price">$17</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Soft Shell Crab Roll</h3>
+          <p class="menu-price">$22</p>
         </div>
 
       </div>
 
-      <!-- BOTTOM CENTER CARD -->
-      <div class="crew-grid crew-grid-bottom">
-        <div class="crew-card">
-          <div class="crew-photo"></div>
-          <h3 class="crew-name">General Manager</h3>
-          <p class="crew-role">Operations &amp; Guest Experience</p>
+      <!-- SPECIAL DISHES -->
+      <h3 class="specials-title">Chef’s Specials</h3>
+      <div class="specials-grid">
+
+        <div class="menu-card special">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Golden Dragon Roll</h3>
+          <p class="menu-price">$28</p>
         </div>
+
+        <div class="menu-card special">
+          <div class="menu-photo"></div>
+          <h3 class="menu-name">Bluefin Supreme</h3>
+          <p class="menu-price">$45</p>
+        </div>
+
       </div>
 
     </div>
   </section>
 
-  <!-- DRINKS SECTION -->
+
+  <!-- DRINKS -->
   <section id="drinks" class="page-section" aria-label="drinks">
     <div class="section-inner">
 
       <h2 class="section-title">Drinks</h2>
-
       <div class="grid">
-        <div class="card">
-          <div class="avatar-placeholder"></div>
-          <h3>Junmai Sake</h3>
-          <p class="muted">Warm or chilled.</p>
-        </div>
-
-        <div class="card">
-          <div class="avatar-placeholder"></div>
-          <h3>Japanese Whisky</h3>
-          <p class="muted">Single malts &amp; blends.</p>
-        </div>
-
-        <div class="card">
-          <div class="avatar-placeholder"></div>
-          <h3>Non-alcoholic</h3>
-          <p class="muted">Teas &amp; house sodas.</p>
-        </div>
+        <div class="card"><div class="avatar-placeholder"></div><h3>Junmai Sake</h3><p class="muted">Warm or chilled.</p></div>
+        <div class="card"><div class="avatar-placeholder"></div><h3>Japanese Whisky</h3><p class="muted">Single malts & blends.</p></div>
+        <div class="card"><div class="avatar-placeholder"></div><h3>Non-alcoholic</h3><p class="muted">Teas & house sodas.</p></div>
       </div>
 
     </div>
   </section>
 
-  <!-- EMPLOYEES SECTION -->
-  <section id="employees" class="page-section" aria-label="employees">
+
+  <!-- EVENTS (NEW SECTION) -->
+  <section id="events" class="page-section" aria-label="events">
     <div class="section-inner">
 
-      <h2 class="section-title">Our Team Members</h2>
+      <h2 class="section-title">Events</h2>
+      <p class="section-subtitle">Seasonal dining experiences & curated tastings</p>
+      <div class="section-divider"><span></span><span></span><span></span></div>
 
-      <div class="grid">
-        <div class="card">
-          <div class="avatar-placeholder"></div>
-          <h3>Employee 1</h3>
-          <p class="muted">Front of House</p>
-        </div>
-
-        <div class="card">
-          <div class="avatar-placeholder"></div>
-          <h3>Employee 2</h3>
-          <p class="muted">Kitchen Assistant</p>
-        </div>
+      <div class="events-box">
+        <h3>Winter Kaiseki Evening</h3>
+        <p>
+          A limited-seat experience crafted by our head chef.  
+          Featuring seasonal seafood, handcrafted pairings, and traditional techniques.
+        </p>
       </div>
 
     </div>
   </section>
 
-  <!-- MISSION SECTION -->
+
+  <!-- MISSION -->
   <section id="mission" class="page-section" aria-label="mission">
     <div class="section-inner">
-
       <h2 class="section-title">Mission</h2>
-
       <p class="mission-text">
         To present sushi that respects tradition while embracing local, seasonal ingredients.
       </p>
-
     </div>
   </section>
+
 
   <!-- FOOTER -->
   <footer>
@@ -159,10 +209,9 @@
     <p>📞 020-1234-5678 · ✉ reservations@example.com</p>
   </footer>
 
-  <!-- SCRIPT -->
   <script src="./script.js"></script>
-
 </body>
 </html>
+
 
 
