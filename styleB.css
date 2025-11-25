@@ -573,12 +573,13 @@ footer {
 /* FIX FOOD IMAGE CROPPING */
 /* FINAL FIX — FORCE MENU IMAGES TO SHOW FULL FOOD */
 .menu-photo {
-  height: 200px !important; /* bigger image box */
-  background-size: contain !important; /* show entire image */
-  background-repeat: no-repeat !important; 
+  height: 220px !important;
+  background-size: cover !important;
   background-position: center !important;
-  background-color: #0a151f !important; /* clean background behind */
+  background-repeat: no-repeat !important;
+  background-image: inherit !important;
 }
+
 
 
 
