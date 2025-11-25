@@ -373,14 +373,15 @@ nav a:hover::after {
 }
 
 .menu-photo {
-  height: 140px;
-  background:
-    radial-gradient(circle at 0 0, rgba(214,180,106,0.22), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(214,180,106,0.12), transparent 50%),
-    linear-gradient(135deg, #121f2b, #050a10);
+  height: 210px;
   border-radius: 12px;
   margin-bottom: 18px;
   border: 1px solid rgba(214,180,106,0.25);
+
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-color: #0a151f !important;
 }
 
 .menu-name {
@@ -572,21 +573,6 @@ footer {
 }
 /* FIX FOOD IMAGE CROPPING */
 /* FINAL FIX — FORCE MENU IMAGES TO SHOW FULL FOOD */
-.menu-photo {
-  height: 200px;
-  border-radius: 12px;
-  margin-bottom: 18px;
-  border: 1px solid rgba(214,180,106,0.25);
-
-  /* FIX — show whole image */
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-
-  /* FIX — remove gradients so image is visible */
-  background-color: #0a151f !important;
-}
-
 
 
 
