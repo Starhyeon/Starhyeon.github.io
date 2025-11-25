@@ -562,13 +562,13 @@ footer {
 /* Make 新鲜 tag readable */
 /* Premium-style tag for 新鲜 */
 /* Make 新鲜 tag brighter and readable */
-.tag-fresh {
-  background: #4cffc3 !important;   /* neon jade green */
-  color: #000 !important;            /* black text */
-  padding: 3px 10px;
-  font-size: 12px;
-  border-radius: 999px;
-  border: 1px solid #9affdf;
+/* FORCE 新鲜 to override all default tag styles */
+.menu-tags .tag-fresh {
+  background: #4cffc3 !important;   /* bright jade */
+  color: #000 !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  border: 1px solid #9affdf !important;
 }
 
 
