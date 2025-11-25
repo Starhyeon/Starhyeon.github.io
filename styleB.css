@@ -30,7 +30,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* subtle fabric / paper texture over whole site */
+/* subtle pattern texture */
 body::before {
   content: "";
   position: fixed;
@@ -46,7 +46,6 @@ body::before {
 }
 
 /* HEADER */
-
 header {
   position: fixed;
   top: 0;
@@ -104,7 +103,6 @@ nav a:hover::after {
 }
 
 /* PAGE SECTIONS */
-
 .page-section {
   display: none;
   min-height: 100vh;
@@ -127,10 +125,10 @@ nav a:hover::after {
 }
 
 /* HERO */
-
 #hero {
   padding: 0;
   min-height: 100vh;
+  position: relative;
 }
 
 .slides {
@@ -196,7 +194,6 @@ nav a:hover::after {
   justify-content: center;
   text-align: center;
   padding: 0 16px;
-  transition: transform 0.25s ease-out;
 }
 
 .hero-text h1 {
@@ -204,12 +201,6 @@ nav a:hover::after {
   color: var(--accent);
   font-weight: 900;
   font-size: 80px;
-  letter-spacing: 3px;
-}
-
-.hero-text h1:hover {
-  letter-spacing: 4px;
-  transition: letter-spacing 0.25s ease;
 }
 
 .hero-text p {
@@ -218,8 +209,7 @@ nav a:hover::after {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* GENERIC SECTION TITLES */
-
+/* SECTION TITLES */
 .section-title {
   text-align: center;
   font-size: 40px;
@@ -234,11 +224,9 @@ nav a:hover::after {
   text-align: center;
   color: var(--muted);
   font-size: 14px;
-  line-height: 1.5;
 }
 
 /* divider */
-
 .section-divider {
   margin: 24px auto 0;
   display: flex;
@@ -277,8 +265,7 @@ nav a:hover::after {
   transform: rotate(4deg);
 }
 
-/* TEAM */
-
+/* TEAM SECTION */
 #team {
   background: radial-gradient(circle at top,
     #091624 0,
@@ -289,22 +276,18 @@ nav a:hover::after {
 
 .crew-grid {
   display: grid;
-  grid-auto-rows: 1fr;
   gap: 26px;
   margin-top: 46px;
 }
 
 .crew-grid-top {
   grid-template-columns: repeat(3, minmax(260px, 1fr));
-  justify-content: center;
   max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .crew-grid-bottom {
   grid-template-columns: minmax(300px, 380px);
-  justify-content: center;
   max-width: 420px;
   margin: 34px auto 0;
 }
@@ -320,29 +303,6 @@ nav a:hover::after {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
   position: relative;
   overflow: hidden;
-  transition: transform 0.22s ease-out, box-shadow 0.22s ease-out;
-}
-
-.crew-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 1px solid rgba(214, 180, 106, 0.16);
-  pointer-events: none;
-}
-
-.crew-card::after {
-  content: "";
-  position: absolute;
-  inset: -30%;
-  background: radial-gradient(circle at 50% 0,
-    rgba(214,180,106,0.35),
-    transparent 65%
-  );
-  opacity: 0;
-  transition: opacity 0.25s ease-out;
-  z-index: -1;
 }
 
 .crew-card:hover {
@@ -350,53 +310,25 @@ nav a:hover::after {
   box-shadow: 0 26px 55px rgba(0, 0, 0, 0.7);
 }
 
-.crew-card:hover::after {
-  opacity: 1;
-}
-
-/* ------------------------------------
-   FIXED CREW PHOTO (NO FACE CROPPING)
-------------------------------------- */
-
+/* CREW PHOTOS */
 .crew-photo {
   width: 100%;
-  height: 320px;                 /* FIXED: taller portrait area */
+  height: 320px;
   background-size: cover;
-  background-position: top center; /* FIXED: faces stay visible */
+  background-position: top center;
   background-repeat: no-repeat;
   border-radius: 12px;
   margin-bottom: 22px;
   border: 1px solid rgba(214, 180, 106, 0.18);
 }
-/* ---------------------------
-   AIDEN TRAN — FIXED POSITION
----------------------------- */
+
+/* Aiden Tran face fix */
 .tran-photo {
   background-image: url("./images/tran.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  /* ↓ Move image DOWN so his head appears */
   background-position: center 20%;
 }
 
-
-/* OPTIONAL: individual tweaks if needed */
-
-/* Aiden Tran – slightly lower face (uncomment if needed) */
-/*
-.crew-photo[style*="tran.jpg"] {
-  background-position: center 10%;
-}
-*/
-
-/* Turtle – center body more than face */
-/*
-.crew-photo[style*="turtle.jpg"] {
-  background-position: center center;
-}
-*/
-
+/* Crew text */
 .crew-name {
   margin: 0 0 4px;
   font-size: 16px;
@@ -410,9 +342,90 @@ nav a:hover::after {
   color: var(--muted);
 }
 
-/* DRINKS + MENU ... (same as your existing) */
-/* EVERYTHING BELOW REMAINS UNCHANGED */
+/* ============================
+   MENU SECTION — FULL RESTORE
+=============================== */
 
+#menu {
+  background: radial-gradient(circle at top, #0b1724 0, #050c14 55%, #03070b 100%);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 26px;
+  margin-top: 40px;
+}
+
+.menu-card {
+  background: radial-gradient(circle at top left, #182836 0, #0a151f 55%, #060d14 100%);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 18px 38px rgba(0,0,0,0.55);
+  position: relative;
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+}
+
+.menu-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(214,180,106,0.15);
+}
+
+.menu-photo {
+  height: 140px;
+  background:
+    radial-gradient(circle at 0 0, rgba(214,180,106,0.22), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(214,180,106,0.12), transparent 50%),
+    linear-gradient(135deg, #121f2b, #050a10);
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(214,180,106,0.18);
+}
+
+.menu-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.menu-price {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* specials */
+.specials-title {
+  margin-top: 48px;
+  text-align: center;
+  color: var(--accent);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px,1fr));
+  gap: 26px;
+  margin-top: 26px;
+}
+
+.special {
+  background: radial-gradient(circle at top left, #26394c 0, #0a131c 55%, #060c12 100%);
+}
+
+/* DRINKS GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -423,48 +436,14 @@ nav a:hover::after {
 .card {
   background: var(--card);
   border-radius: 14px;
-  padding: 18px 18px 18px;
+  padding: 18px;
   box-shadow: 0 18px 34px rgba(0, 0, 0, 0.45);
   position: relative;
-  overflow: hidden;
-  transition: transform 0.22s ease-out, box-shadow 0.22s ease-out;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 1px solid rgba(214, 180, 106, 0.12);
-  pointer-events: none;
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  background: radial-gradient(circle at 50% 0,
-    rgba(214, 180, 106, 0.25),
-    transparent 65%
-  );
-  opacity: 0;
-  transition: opacity 0.25s ease-out;
-  z-index: -1;
-}
-
-.card h3 {
-  margin: 0 0 6px;
-  font-size: 16px;
-  color: #ffffff;
 }
 
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 26px 55px rgba(0, 0, 0, 0.7);
-}
-
-.card:hover::after {
-  opacity: 1;
 }
 
 .avatar-placeholder {
@@ -477,6 +456,21 @@ nav a:hover::after {
   border: 1px solid rgba(214, 180, 106, 0.18);
 }
 
+/* EVENTS SECTION */
+#events {
+  background: radial-gradient(circle at top, #0b1622 0, #050c15 55%, #03060a 100%);
+}
+
+.events-box {
+  margin-top: 40px;
+  background: rgba(255,255,255,0.03);
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(214,180,106,0.18);
+  box-shadow: 0 18px 34px rgba(0,0,0,0.4);
+}
+
+/* MISSION */
 .mission-text {
   max-width: 720px;
   margin: 30px auto 0;
@@ -488,6 +482,7 @@ nav a:hover::after {
   border: 1px solid rgba(214, 180, 106, 0.14);
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 40px 20px 50px;
@@ -496,15 +491,10 @@ footer {
   font-size: 13px;
 }
 
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-  .hero-text h1 {
-    font-size: 60px;
-  }
-
-  .section-title {
-    font-size: 34px;
-  }
-
+  .hero-text h1 { font-size: 60px; }
+  .section-title { font-size: 34px; }
   .crew-grid-top {
     grid-template-columns: repeat(2, minmax(260px, 1fr));
   }
@@ -515,37 +505,24 @@ footer {
     height: 64px;
     padding: 0 14px;
   }
-
-  .logo {
-    font-size: 22px;
-  }
-
+  .logo { font-size: 22px; }
   nav a {
     font-size: 13px;
     margin-left: 14px;
   }
-
   .page-section {
     padding: 90px 16px 100px;
   }
-
-  .hero-text h1 {
-    font-size: 40px;
-  }
-
-  .hero-text p {
-    font-size: 16px;
-  }
-
+  .hero-text h1 { font-size: 40px; }
+  .hero-text p { font-size: 16px; }
   .crew-grid-top {
     grid-template-columns: minmax(260px, 1fr);
   }
-
   .crew-grid-bottom {
     margin-top: 26px;
   }
-
   .crew-photo {
-    height: 300px;  /* resize for mobile */
+    height: 300px;
   }
 }
+
