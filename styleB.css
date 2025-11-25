@@ -571,15 +571,13 @@ footer {
   border: 1px solid #9affdf !important;
 }
 /* FIX FOOD IMAGE CROPPING */
+/* FINAL FIX — FORCE MENU IMAGES TO SHOW FULL FOOD */
 .menu-photo {
-  height: 180px;                    /* taller = more visible */
-  background-size: contain !important;   /* STOP zooming */
-  background-repeat: no-repeat !important;
+  height: 200px !important; /* bigger image box */
+  background-size: contain !important; /* show entire image */
+  background-repeat: no-repeat !important; 
   background-position: center !important;
-  border-radius: 12px;
-  margin-bottom: 18px;
-  border: 1px solid rgba(214,180,106,0.25);
-  background-color: #0b1622;        /* fallback */
+  background-color: #0a151f !important; /* clean background behind */
 }
 
 
