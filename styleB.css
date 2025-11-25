@@ -558,4 +558,13 @@ footer {
     height: 300px;
   }
 }
+/* Make 新鲜 tag readable */
+.fresh-tag {
+  background: #d6b46a !important;  /* gold background */
+  color: #000 !important;          /* black text */
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
 
