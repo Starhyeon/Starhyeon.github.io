@@ -560,9 +560,16 @@ footer {
 }
 /* Make 新鲜 tag readable */
 /* Make 新鲜 tag readable */
+/* Premium-style tag for 新鲜 */
 .tag-fresh {
-  background: #d6b46a !important;  /* gold */
-  color: #000 !important;          /* black text */
-  border: 1px solid #f5dca3;
+  background: rgba(120, 255, 200, 0.18);   /* soft jade glow */
+  color: #9fffe0;                         /* light mint text */
+  border: 1px solid rgba(120, 255, 200, 0.35);
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(3px);
 }
+
 
