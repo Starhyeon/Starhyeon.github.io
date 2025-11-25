@@ -572,11 +572,14 @@ footer {
 }
 /* FIX FOOD IMAGE CROPPING */
 .menu-photo {
-  height: 180px;                      /* larger so food is visible */
-  background-size: contain !important; /* show entire image */
+  height: 180px;                    /* taller = more visible */
+  background-size: contain !important;   /* STOP zooming */
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-color: #0a141e !important; /* clean backdrop */
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(214,180,106,0.25);
+  background-color: #0b1622;        /* fallback */
 }
 
 
