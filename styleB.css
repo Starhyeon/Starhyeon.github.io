@@ -570,6 +570,14 @@ footer {
   border-radius: 999px !important;
   border: 1px solid #9affdf !important;
 }
+/* FIX FOOD IMAGE CROPPING */
+.menu-photo {
+  height: 180px;                      /* larger so food is visible */
+  background-size: contain !important; /* show entire image */
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-color: #0a141e !important; /* clean backdrop */
+}
 
 
 
