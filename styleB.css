@@ -209,6 +209,137 @@ nav a:hover::after {
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* TITLES */
+.section-title {
+  text-align: center;
+  font-size: 40px;
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.section-subtitle {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* DIVIDER */
+.section-divider {
+  margin: 24px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.section-divider span {
+  display: block;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(214, 180, 106, 0.1),
+    var(--accent),
+    rgba(214, 180, 106, 0.1)
+  );
+}
+
+.section-divider span:nth-child(1),
+.section-divider span:nth-child(3) {
+  width: 42px;
+}
+
+.section-divider span:nth-child(2) {
+  width: 70px;
+}
+
+.section-divider span:nth-child(1) {
+  transform-origin: right center;
+  transform: rotate(-4deg);
+}
+
+.section-divider span:nth-child(3) {
+  transform-origin: left center;
+  transform: rotate(4deg);
+}
+
+/* TEAM SECTION */
+#team {
+  background: radial-gradient(circle at top,
+    #091624 0,
+    #050c14 55%,
+    #04070b 100%
+  );
+}
+
+.crew-grid {
+  display: grid;
+  gap: 26px;
+  margin-top: 46px;
+}
+
+.crew-grid-top {
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.crew-grid-bottom {
+  grid-template-columns: minmax(300px, 380px);
+  max-width: 420px;
+  margin: 34px auto 0;
+}
+
+.crew-card {
+  background: radial-gradient(circle at top left,
+    #182836 0,
+    #0a151f 55%,
+    #060d14 100%
+  );
+  border-radius: 16px;
+  padding: 28px 26px 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+  position: relative;
+  overflow: hidden;
+}
+
+.crew-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.7);
+}
+
+/* CREW PHOTOS */
+.crew-photo {
+  width: 100%;
+  height: 320px;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(214, 180, 106, 0.18);
+}
+
+/* Face fix */
+.crew-photo[style*="tranz.jpg"] {
+  background-position: center 20%;
+}
+
+/* Crew text */
+.crew-name {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.crew-role {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
 /* SECTION TITLES */
 .section-title {
   text-align: center;
@@ -310,7 +441,6 @@ nav a:hover::after {
   box-shadow: 0 26px 55px rgba(0, 0, 0, 0.7);
 }
 
-/* CREW PHOTOS */
 .crew-photo {
   width: 100%;
   height: 320px;
@@ -322,12 +452,11 @@ nav a:hover::after {
   border: 1px solid rgba(214, 180, 106, 0.18);
 }
 
-/* Fix for Aiden Tran photo */
+/* Aiden Tran face fix */
 .crew-photo[style*="tranz.jpg"] {
   background-position: center 20%;
 }
 
-/* Crew text */
 .crew-name {
   margin: 0 0 4px;
   font-size: 16px;
@@ -339,214 +468,5 @@ nav a:hover::after {
   margin: 0;
   font-size: 13px;
   color: var(--muted);
-}
-
-/* MENU SECTION */
-#menu {
-  background: radial-gradient(circle at top, #0b1724 0, #050c14 55%, #03070b 100%);
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
-  gap: 26px;
-  margin-top: 40px;
-}
-
-.menu-card {
-  background: rgba(5, 10, 16, 0.92);
-  border-radius: 16px;
-  padding: 24px 22px;
-  box-shadow: 0 18px 38px rgba(0,0,0,0.65);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(214,180,106,0.32);
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-}
-
-.menu-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.9);
-}
-
-.menu-photo {
-  height: 140px;
-  background:
-    radial-gradient(circle at 0 0, rgba(214,180,106,0.22), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(214,180,106,0.12), transparent 50%),
-    linear-gradient(135deg, #121f2b, #050a10);
-  border-radius: 12px;
-  margin-bottom: 18px;
-  border: 1px solid rgba(214,180,106,0.25);
-}
-
-.menu-name {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.menu-tags {
-  margin: 6px 0 4px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.menu-tags .tag {
-  padding: 2px 8px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #000;
-}
-
-.tag-sweet   { background: #ffc6e0; }
-.tag-spicy   { background: #ff7a7a; }
-.tag-sour    { background: #ffe47a; }
-.tag-salty   { background: #b0d8ff; }
-.tag-fragrant{ background: #ffe1aa; }
-.tag-light   { background: #e3f0ff; }
-.tag-bitter  { background: #c7b0ff; }
-
-.menu-rating {
-  font-size: 13px;
-  margin: 2px 0 6px;
-  color: gold;
-}
-
-.menu-desc {
-  margin: 4px 0 10px;
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--muted);
-}
-
-.menu-price {
-  margin: 0;
-  font-size: 14px;
-  color: var(--accent);
-  text-align: right;
-}
-
-.specials-title {
-  margin-top: 48px;
-  text-align: center;
-  color: var(--accent);
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.specials-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(260px,1fr));
-  gap: 26px;
-  margin-top: 26px;
-}
-
-.special {
-  background: rgba(12, 20, 32, 0.96);
-}
-
-/* DRINKS GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 22px;
-  margin-top: 36px;
-}
-
-.card {
-  background: var(--card);
-  border-radius: 14px;
-  padding: 18px;
-  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.45);
-  position: relative;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.7);
-}
-
-.avatar-placeholder {
-  height: 120px;
-  border-radius: 10px;
-  margin-bottom: 12px;
-  background:
-    radial-gradient(circle at 0 0, rgba(214, 180, 106, 0.24), transparent 55%),
-    linear-gradient(145deg, #141f2a, #050a10);
-  border: 1px solid rgba(214, 180, 106, 0.18);
-}
-
-/* EVENTS SECTION */
-#events {
-  background: radial-gradient(circle at top, #0b1622 0, #050c15 55%, #03060a 100%);
-}
-
-.events-box {
-  margin-top: 40px;
-  background: rgba(255,255,255,0.03);
-  padding: 28px;
-  border-radius: 16px;
-  border: 1px solid rgba(214,180,106,0.18);
-  box-shadow: 0 18px 34px rgba(0,0,0,0.4);
-}
-
-/* MISSION */
-.mission-text {
-  max-width: 720px;
-  margin: 30px auto 0;
-  background: rgba(255, 255, 255, 0.02);
-  padding: 22px 24px;
-  border-radius: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-  border: 1px solid rgba(214,180,106,0.14);
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px 20px 50px;
-  background: #02060a;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .hero-text h1 { font-size: 60px; }
-  .section-title { font-size: 34px; }
-  .crew-grid-top {
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    height: 64px;
-    padding: 0 14px;
-  }
-  .logo { font-size: 22px; }
-  nav a {
-    font-size: 13px;
-    margin-left: 14px;
-  }
-  .page-section {
-    padding: 90px 16px 100px;
-  }
-  .hero-text h1 { font-size: 40px; }
-  .hero-text p { font-size: 16px; }
-  .crew-grid-top {
-    grid-template-columns: minmax(260px, 1fr);
-  }
-  .crew-grid-bottom {
-    margin-top: 26px;
-  }
-  .crew-photo {
-    height: 300px;
-  }
 }
 
