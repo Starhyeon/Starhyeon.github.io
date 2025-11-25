@@ -348,10 +348,9 @@ nav a:hover::after {
   height: 160px;
   border-radius: 12px;
   margin-bottom: 22px;
-  background:
-    radial-gradient(circle at 0 0, rgba(214, 180, 106, 0.22), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(214, 180, 106, 0.12), transparent 50%),
-    linear-gradient(135deg, #121f2b 0, #060d14 55%, #050a10 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 1px solid rgba(214, 180, 106, 0.18);
 }
 
