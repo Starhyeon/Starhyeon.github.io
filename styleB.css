@@ -390,10 +390,51 @@ nav a:hover::after {
   color: var(--accent);
 }
 
-.menu-price {
-  margin: 6px 0 0;
-  font-size: 14px;
+/* Flavor tags under name */
+.menu-tags {
+  margin: 6px 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.menu-tags .tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #000;
+}
+
+/* tag colors */
+.tag-sweet   { background: #ffc6e0; }   /* 甜 */
+.tag-spicy   { background: #ff7a7a; }   /* 辣 */
+.tag-sour    { background: #ffe47a; }   /* 酸 */
+.tag-salty   { background: #b0d8ff; }   /* 咸 */
+.tag-fragrant{ background: #ffe1aa; }   /* 香 */
+.tag-light   { background: #e3f0ff; }   /* 淡 */
+.tag-bitter  { background: #c7b0ff; }   /* 苦 */
+
+/* star rating */
+.menu-rating {
+  font-size: 13px;
+  margin: 2px 0 6px;
+  color: gold;
+}
+
+/* description text */
+.menu-desc {
+  margin: 4px 0 10px;
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--muted);
+}
+
+/* price at bottom right */
+.menu-price {
+  margin: 0;
+  font-size: 14px;
+  color: var(--accent);
   text-align: right;
 }
 
