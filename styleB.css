@@ -573,25 +573,20 @@ footer {
 /* FIX FOOD IMAGE CROPPING */
 /* FINAL FIX — FORCE MENU IMAGES TO SHOW FULL FOOD */
 .menu-photo {
-  height: 220px !important;
+  height: 200px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(214,180,106,0.25);
 
-  /* show full food picture, zoomed OUT */
+  /* FIX — show whole image */
   background-size: contain !important;
-
-  /* no stretching or cropping */
   background-repeat: no-repeat !important;
   background-position: center !important;
 
-  /* keep your border + rounded corners */
-  border-radius: 12px;
-  border: 1px solid rgba(214,180,106,0.25);
-
-  /* fallback for empty images */
+  /* FIX — remove gradients so image is visible */
   background-color: #0a151f !important;
-  
-  /* allow inline background-image + CSS layers to BOTH work */
-  background-blend-mode: normal !important;
 }
+
 
 
 
