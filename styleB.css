@@ -118,6 +118,12 @@ nav a:hover::after {
   opacity: 1;
   transform: translateY(0);
 }
+/* Smooth fade-in when section enters viewport */
+.page-section.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
 
 .section-inner {
   max-width: var(--site-width);
