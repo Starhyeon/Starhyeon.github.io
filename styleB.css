@@ -559,15 +559,18 @@ footer {
 }
 
 /* FINAL FIX — your request */
+/* FINAL FIX — SAFE VERSION: show full image but KEEP card design */
 .menu-photo {
-  height: 200px;
+  height: 200px !important; /* shows more of the image */
+  background-size: contain !important; /* show full image */
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+
+  /* KEEP original styling so the boxes stay correct */
   border-radius: 12px;
   margin-bottom: 18px;
   border: 1px solid rgba(214,180,106,0.25);
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-color: #0a151f !important;
+  background-color: #050a10; /* dark backdrop, not pure black */
 }
 
 
