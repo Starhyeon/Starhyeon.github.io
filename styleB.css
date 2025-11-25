@@ -322,9 +322,8 @@ nav a:hover::after {
   border: 1px solid rgba(214, 180, 106, 0.18);
 }
 
-/* Aiden Tran face fix */
-.tran-photo {
-  background-image: url("./images/tran.jpg");
+/* Aiden Tran face fix (new file name) */
+.crew-photo[style*="tranz.jpg"] {
   background-position: center 20%;
 }
 
@@ -343,7 +342,7 @@ nav a:hover::after {
 }
 
 /* ============================
-   MENU SECTION — FULL RESTORE
+   MENU SECTION
 =============================== */
 
 #menu {
@@ -358,26 +357,19 @@ nav a:hover::after {
 }
 
 .menu-card {
-  background: radial-gradient(circle at top left, #182836 0, #0a151f 55%, #060d14 100%);
+  background: rgba(5, 10, 16, 0.92);                /* solid dark box */
   border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 18px 38px rgba(0,0,0,0.55);
+  padding: 24px 22px;
+  box-shadow: 0 18px 38px rgba(0,0,0,0.65);
   position: relative;
   overflow: hidden;
-  transition: 0.25s ease;
+  border: 1px solid rgba(214,180,106,0.32);         /* visible gold border */
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 .menu-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.7);
-}
-
-.menu-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 1px solid rgba(214,180,106,0.15);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.9);
 }
 
 .menu-photo {
@@ -388,7 +380,7 @@ nav a:hover::after {
     linear-gradient(135deg, #121f2b, #050a10);
   border-radius: 12px;
   margin-bottom: 18px;
-  border: 1px solid rgba(214,180,106,0.18);
+  border: 1px solid rgba(214,180,106,0.25);
 }
 
 .menu-name {
@@ -422,7 +414,7 @@ nav a:hover::after {
 }
 
 .special {
-  background: radial-gradient(circle at top left, #26394c 0, #0a131c 55%, #060c12 100%);
+  background: rgba(12, 20, 32, 0.96);
 }
 
 /* DRINKS GRID */
