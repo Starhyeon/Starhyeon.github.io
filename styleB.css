@@ -368,6 +368,18 @@ nav a:hover::after {
   margin-bottom: 22px;
   border: 1px solid rgba(214, 180, 106, 0.18);
 }
+/* ---------------------------
+   AIDEN TRAN — FIXED POSITION
+---------------------------- */
+.tran-photo {
+  background-image: url("./images/tran.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* ↓ Move image DOWN so his head appears */
+  background-position: center 20%;
+}
+
 
 /* OPTIONAL: individual tweaks if needed */
 
