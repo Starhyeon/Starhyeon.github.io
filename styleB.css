@@ -572,5 +572,12 @@ footer {
   border: 1px solid rgba(214,180,106,0.25);
   background-color: #050a10; /* dark backdrop, not pure black */
 }
+/* DRINK FACTS — safe and minimal */
+.drink-facts {
+  margin: 2px 0 8px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.45;
+}
 
 
