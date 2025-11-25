@@ -118,6 +118,12 @@ nav a:hover::after {
   opacity: 1;
   transform: translateY(0);
 }
+/* fade-in fix for section switching */
+.page-section.active:not(.visible) {
+  opacity: 0 !important;
+  transform: translateY(22px) !important;
+}
+
 /* Smooth fade-in when section enters viewport */
 .page-section.visible {
   opacity: 1 !important;
