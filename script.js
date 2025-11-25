@@ -68,3 +68,14 @@ if (heroSection && heroText) {
     heroText.style.transform = "translate3d(0, 0, 0)";
   });
 }
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".page-section").forEach(sec => observer.observe(sec));
+
