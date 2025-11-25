@@ -345,15 +345,22 @@ nav a:hover::after {
 
 /* bigger photo */
 .crew-photo {
+  width: 100%;
   height: 160px;
   border-radius: 12px;
   margin-bottom: 22px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 1px solid rgba(214, 180, 106, 0.18);
-}
 
+  /* Show YOUR uploaded photo cleanly */
+  background-size: cover;        /* Fills the box */
+  background-position: center;   /* Centers the face */
+  background-repeat: no-repeat;  /* Prevents tiling */
+
+  /* Keep your gold border */
+  border: 1px solid rgba(214, 180, 106, 0.18);
+
+  /* Remove ALL gradients that caused the “double image” */
+  background-image: none !important;
+}
 /* text inside crew cards */
 .crew-name {
   margin: 0 0 4px;
