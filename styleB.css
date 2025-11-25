@@ -262,5 +262,12 @@ nav a::after {
   }
 }
 
+/* FIX FOOD IMAGES — show whole image without breaking design */
+.menu-photo {
+  background-size: cover !important;     /* fills box properly */
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  height: 180px !important;               /* slightly taller to show more */
+}
 
 
