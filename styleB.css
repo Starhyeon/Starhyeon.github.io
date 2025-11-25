@@ -310,7 +310,6 @@ nav a:hover::after {
   box-shadow: 0 26px 55px rgba(0, 0, 0, 0.7);
 }
 
-/* CREW PHOTOS */
 .crew-photo {
   width: 100%;
   height: 320px;
@@ -322,7 +321,6 @@ nav a:hover::after {
   border: 1px solid rgba(214, 180, 106, 0.18);
 }
 
-/* Aiden Tran face fix */
 .crew-photo[style*="tranz.jpg"] {
   background-position: center 20%;
 }
@@ -340,7 +338,9 @@ nav a:hover::after {
   color: var(--muted);
 }
 
-/* ============================ MENU SECTION =============================== */
+/* ============================
+   MENU SECTION
+=============================== */
 
 #menu {
   background: radial-gradient(circle at top, #0b1724 0, #050c14 55%, #03070b 100%);
@@ -370,14 +370,14 @@ nav a:hover::after {
 }
 
 .menu-photo {
-  height: 200px;
+  height: 140px;
+  background:
+    radial-gradient(circle at 0 0, rgba(214,180,106,0.22), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(214,180,106,0.12), transparent 50%),
+    linear-gradient(135deg, #121f2b, #050a10);
   border-radius: 12px;
   margin-bottom: 18px;
   border: 1px solid rgba(214,180,106,0.25);
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-color: #0a151f !important;
 }
 
 .menu-name {
@@ -402,13 +402,13 @@ nav a:hover::after {
   color: #000;
 }
 
-.tag-sweet { background: #ffc6e0; }
-.tag-spicy { background: #ff7a7a; }
-.tag-sour { background: #ffe47a; }
-.tag-salty { background: #b0d8ff; }
-.tag-fragrant { background: #ffe1aa; }
-.tag-light { background: #e3f0ff; }
-.tag-bitter { background: #c7b0ff; }
+.tag-sweet   { background: #ffc6e0; }
+.tag-spicy   { background: #ff7a7a; }
+.tag-sour    { background: #ffe47a; }
+.tag-salty   { background: #b0d8ff; }
+.tag-fragrant{ background: #ffe1aa; }
+.tag-light   { background: #e3f0ff; }
+.tag-bitter  { background: #c7b0ff; }
 
 .menu-rating {
   font-size: 13px;
@@ -449,6 +449,7 @@ nav a:hover::after {
   background: rgba(12, 20, 32, 0.96);
 }
 
+/* DRINKS GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -479,7 +480,7 @@ nav a:hover::after {
   border: 1px solid rgba(214, 180, 106, 0.18);
 }
 
-/* EVENTS SECTION */
+/* EVENTS */
 #events {
   background: radial-gradient(circle at top, #0b1622 0, #050c15 55%, #03060a 100%);
 }
@@ -549,7 +550,6 @@ footer {
   }
 }
 
-/* 新鲜 TAG FIX */
 .menu-tags .tag-fresh {
   background: #4cffc3 !important;
   color: #000 !important;
@@ -558,5 +558,16 @@ footer {
   border: 1px solid #9affdf !important;
 }
 
+/* FINAL FIX — your request */
+.menu-photo {
+  height: 200px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(214,180,106,0.25);
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-color: #0a151f !important;
+}
 
 
